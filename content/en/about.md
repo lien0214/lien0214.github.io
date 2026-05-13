@@ -60,10 +60,10 @@ Before grad school, I spent about 18 months as a backend engineer intern at Shop
 
 ## Technical Profile
 
-**Most fluent in:** TypeScript, Python, C#
-**Backend stack I know well:** ASP.NET Core, Node.js, Kubernetes, Docker, MongoDB, PostgreSQL
-**ML tools I use regularly:** PyTorch, HuggingFace Transformers, PEFT/LoRA, Activation Steering
-**Currently learning:** Go, more CUDA-level attention mechanisms, TWSE market microstructure
+- **Most fluent in:** TypeScript, Python, C#
+- **Backend stack I know well:** ASP.NET Core, Node.js, Kubernetes, Docker, MongoDB, PostgreSQL
+- **ML tools I use regularly:** PyTorch, HuggingFace Transformers, PEFT/LoRA, Activation Steering
+- **Currently learning:** Go, more CUDA-level attention mechanisms, TWSE market microstructure
 
 ---
 
