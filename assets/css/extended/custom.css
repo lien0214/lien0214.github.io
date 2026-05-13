@@ -1,0 +1,588 @@
+/* ── Widen the main container to accommodate sidebar ── */
+:root {
+    --main-width: 1080px;
+}
+
+/* ── Homepage avatar ── */
+.home-info-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.home-avatar-wrap {
+    margin-bottom: 4px;
+}
+
+.home-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+    display: block;
+}
+
+/* ── About page avatar ── */
+.about-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+    float: right;
+    margin: 0 0 20px 28px;
+}
+
+@media (max-width: 520px) {
+    .about-avatar {
+        float: none;
+        display: block;
+        margin: 0 0 20px 0;
+    }
+}
+
+/* ── Post page: 2-column grid (content + sidebar) ── */
+.post-with-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    align-items: start;
+}
+
+.post-with-sidebar .post-main {
+    min-width: 0; /* prevent overflow in grid */
+}
+
+/* ── Sidebar ── */
+.post-sidebar {
+    position: sticky;
+    top: calc(var(--header-height, 60px) + 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Sidebar section card */
+.sidebar-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+}
+
+.sidebar-card-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 14px;
+}
+
+/* ── Mini Profile Card ── */
+.sidebar-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.sidebar-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.sidebar-avatar img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+}
+
+.sidebar-bio {
+    font-size: 12px;
+    color: var(--secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.sidebar-socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.sidebar-socials a {
+    font-size: 12px;
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.sidebar-socials a:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* ── Sidebar TOC ── */
+.sidebar-toc {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.sidebar-toc a {
+    display: block;
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 3px 0;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.sidebar-toc a:hover {
+    color: var(--primary);
+    border-left-color: var(--primary);
+}
+
+.sidebar-toc .toc-h3 {
+    padding-left: 22px;
+    font-size: 12px;
+}
+
+/* Active TOC highlight via JS scroll spy */
+.sidebar-toc a.active {
+    color: var(--primary);
+    border-left-color: var(--primary);
+    font-weight: 500;
+}
+
+/* ── Sidebar Tags ── */
+.sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.sidebar-tags a {
+    font-size: 12px;
+    color: var(--secondary);
+    background: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 10px;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.sidebar-tags a:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* ── Hide PaperMod's default inline TOC on post pages with sidebar ── */
+.post-with-sidebar .post-main .toc {
+    display: none;
+}
+
+/* ── Mobile: stack sidebar below content ── */
+@media (max-width: 900px) {
+    .post-with-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .post-sidebar {
+        position: static;
+    }
+}
+
+/* ── Home page: Recent Posts card grid ── */
+.home-posts-section {
+    margin-top: 60px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+}
+
+.home-section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 28px;
+}
+
+.home-post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.home-post-card {
+    position: relative;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.home-post-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.home-post-card-inner {
+    padding: 22px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--secondary);
+}
+
+.home-post-tag {
+    background: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+}
+
+.home-post-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.home-post-summary {
+    font-size: 13px;
+    color: var(--secondary);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+.home-post-link {
+    font-size: 13px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+}
+
+.home-post-card:hover .home-post-link {
+    color: var(--primary);
+}
+
+/* Makes the whole card clickable */
+.home-post-card-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+}
+
+.home-posts-all {
+    margin-top: 24px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.home-posts-all a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.home-posts-all a:hover {
+    color: var(--primary);
+}
+
+/* ── Responsive card grid ── */
+@media (max-width: 780px) {
+    .home-post-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .home-post-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   PROJECTS PAGE
+═══════════════════════════════════════════════ */
+
+.projects-page {
+    max-width: var(--main-width, 1080px);
+    margin: 0 auto;
+    padding: 0 0 64px;
+}
+
+.projects-header {
+    margin-bottom: 48px;
+}
+
+.projects-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.projects-desc {
+    color: var(--secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.projects-section {
+    margin-bottom: 56px;
+}
+
+.projects-section-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ── Project Card ── */
+.project-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.project-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-category {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+}
+
+.project-category--research {
+    background: rgba(88, 166, 255, 0.12);
+    color: #58a6ff;
+    border: 1px solid rgba(88, 166, 255, 0.25);
+}
+
+.project-category--project {
+    background: rgba(63, 185, 80, 0.12);
+    color: #3fb950;
+    border: 1px solid rgba(63, 185, 80, 0.25);
+}
+
+.project-period {
+    font-size: 12px;
+    color: var(--secondary);
+}
+
+.project-card-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.project-link:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.project-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.35;
+}
+
+.project-title-link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.project-title-link:hover {
+    text-decoration: underline;
+}
+
+.project-card-desc {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.project-team {
+    font-size: 12px;
+    color: var(--secondary);
+    margin: 0;
+    font-style: italic;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.project-tag {
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--secondary);
+    background: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.project-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--secondary);
+    margin-top: 2px;
+}
+
+.project-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f78166;
+    flex-shrink: 0;
+    animation: pulse-status 2s ease-in-out infinite;
+}
+
+@keyframes pulse-status {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Single project page: reuse sidebar layout ── */
+.project-single-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-single-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.project-single-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--primary);
+    background: var(--entry);
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.project-btn:hover {
+    border-color: var(--primary);
+    background: var(--theme);
+}

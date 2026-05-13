@@ -1,0 +1,159 @@
+baseURL: https://lien0214.github.io
+title: Yi-Wei Lien
+theme: PaperMod
+
+enableRobotsTXT: true
+enableEmoji: true
+canonifyURLs: true
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+
+languages:
+  en:
+    contentDir: content/en
+    label: EN
+    weight: 1
+    title: Yi-Wei Lien
+    params:
+      authorName: Yi-Wei Lien
+      authorBio: "Backend & AI Engineer · NTU CS MS · MIRLab · MSLab"
+      description: "Yi-Wei Lien — Backend & AI Engineer. NTU CS MS student at MIRLab and MSLab. Writing about LLM research, backend engineering, and quantitative trading."
+      homeInfoParams:
+        Title: "Yi-Wei Lien · 連奕維"
+        Content: >
+          Backend & AI Engineer · NTU CS MS · MIRLab · MSLab
+
+
+          I build reliable distributed systems and research how language models learn, forget, and remember.
+          Currently at [MIRLab](https://mirlab.org) (quant trading) and [MSLab](https://mslab-ntu.github.io) (LLM knowledge conflicts).
+    menu:
+      main:
+        - name: About
+          url: /en/about/
+          weight: 1
+        - name: Posts
+          url: /en/posts/
+          weight: 2
+        - name: Projects
+          url: /en/projects/
+          weight: 3
+        - name: Game
+          url: /en/game/
+          weight: 4
+        - name: Search
+          url: /en/search/
+          weight: 5
+
+  zh-tw:
+    contentDir: content/zh-tw
+    label: 中文
+    weight: 2
+    title: 連奕維
+    params:
+      authorName: 連奕維
+      authorBio: "後端 & AI 工程師 · NTU CS 碩士生 · MIRLab · MSLab"
+      description: "連奕維 — 後端與 AI 工程師。台大資工碩士生，MIRLab 量化交易、MSLab LLM 知識衝突研究。"
+      homeInfoParams:
+        Title: "連奕維 · Yi-Wei Lien"
+        Content: >
+          後端 & AI 工程師 · 台大資工碩士 · MIRLab · MSLab
+
+
+          我在建構可靠的分散式系統，同時研究語言模型如何學習、遺忘與記憶。
+          目前在 [MIRLab](https://mirlab.org)（量化交易）和 MSLab（LLM 知識衝突）進行研究。
+    menu:
+      main:
+        - name: 關於我
+          url: /zh-tw/about/
+          weight: 1
+        - name: 文章
+          url: /zh-tw/posts/
+          weight: 2
+        - name: 專案
+          url: /zh-tw/projects/
+          weight: 3
+        - name: 遊戲
+          url: /zh-tw/game/
+          weight: 4
+        - name: 搜尋
+          url: /zh-tw/search/
+          weight: 5
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  author: Yi-Wei Lien
+  avatar: /images/avatar/Avatar.png
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+
+  profileMode:
+    enabled: false
+
+  socialIcons:
+    - name: github
+      url: https://github.com/lien0214
+    - name: linkedin
+      url: https://www.linkedin.com/in/yi-wei-lien/
+    - name: email
+      url: mailto:ted20030214@gmail.com
+
+  cover:
+    hidden: true
+    hiddenInList: true
+    hiddenInSingle: true
+
+  editPost:
+    URL: https://github.com/lien0214/lien0214.github.io/blob/main/content
+    Text: Suggest Changes
+    appendFilePath: true
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10
+    keys:
+      - title
+      - permalink
+      - summary
+      - content
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: monokai
+
+minify:
+  disableXML: true
+  minifyOutput: true

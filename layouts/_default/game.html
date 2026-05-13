@@ -1,0 +1,169 @@
+{{- define "main" }}
+<style>
+  .game-page { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+  .game-header { margin-bottom: 24px; }
+  .game-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+  .game-header p { color: var(--secondary); font-size: 0.95rem; margin: 0; }
+  .game-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+  .game-tag { background: var(--code-bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 10px; font-size: 0.8rem; font-family: monospace; }
+  #unity-container-wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto 32px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #231F20;
+    position: relative;
+  }
+  #unity-container { position: relative; width: 960px; height: 540px; max-width: 100%; }
+  #unity-container.unity-desktop { width: 100%; }
+  #unity-container.unity-mobile { width: 100%; height: 100%; }
+  #unity-canvas { background: #231F20; width: 100%; height: 100%; display: block; }
+  #unity-loading-bar {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    display: none; text-align: center;
+  }
+  #unity-logo { width: 154px; height: 130px; background: url('/webgl/TemplateData/unity-logo-dark.png') no-repeat center; margin: 0 auto; }
+  #unity-progress-bar-empty {
+    width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px;
+    background: url('/webgl/TemplateData/progress-bar-empty-dark.png') no-repeat center;
+  }
+  #unity-progress-bar-full {
+    width: 0%; height: 18px; margin-top: 10px;
+    background: url('/webgl/TemplateData/progress-bar-full-dark.png') no-repeat center;
+  }
+  #unity-footer {
+    position: relative; background: #1a1a1a;
+    padding: 4px 8px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .unity-mobile #unity-footer { display: none; }
+  #unity-webgl-logo { width: 204px; height: 38px; background: url('/webgl/TemplateData/webgl-logo.png') no-repeat left center; }
+  #unity-build-title { line-height: 38px; font-family: arial; font-size: 18px; color: #ccc; }
+  #unity-fullscreen-button {
+    cursor: pointer; width: 38px; height: 38px;
+    background: url('/webgl/TemplateData/fullscreen-button.png') no-repeat center;
+  }
+  #unity-warning {
+    position: absolute; left: 50%; top: 5%;
+    transform: translate(-50%); background: white;
+    padding: 10px; display: none; z-index: 10;
+  }
+  .game-info { max-width: 960px; margin: 0 auto; }
+  .game-info h2 { font-size: 1.2rem; margin-bottom: 12px; }
+  .game-info p { color: var(--secondary); line-height: 1.7; }
+  @media (max-width: 980px) {
+    #unity-container-wrapper { border-radius: 0; border-left: none; border-right: none; }
+    #unity-container { width: 100%; height: calc(100vw * 9 / 16); }
+  }
+</style>
+
+<div class="game-page">
+  <div class="game-header">
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p>{{ . }}</p>{{- end }}
+    <div class="game-meta">
+      <span class="game-tag">Unity</span>
+      <span class="game-tag">C#</span>
+      <span class="game-tag">WebGL</span>
+      <span class="game-tag">6-person team</span>
+      <span class="game-tag">600+ commits</span>
+    </div>
+  </div>
+
+  <div id="unity-container-wrapper">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-build-title">Bubblo</div>
+        <div id="unity-fullscreen-button"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-info">
+    {{ .Content }}
+  </div>
+</div>
+
+<script>
+  (function() {
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+    var warningBanner = document.querySelector("#unity-warning");
+
+    function unityShowBanner(msg, type) {
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: red; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function() {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
+
+    var buildUrl = "/webgl/Build";
+    var loaderUrl = buildUrl + "/build.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/build.data",
+      frameworkUrl: buildUrl + "/build.framework.js",
+      codeUrl: buildUrl + "/build.wasm",
+      streamingAssetsUrl: "/webgl/StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Bubblo",
+      productVersion: "1.0",
+      showBanner: unityShowBanner,
+    };
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      container.className = "unity-mobile";
+      canvas.className = "unity-mobile";
+    } else {
+      canvas.style.width = "960px";
+      canvas.style.height = "540px";
+    }
+
+    loadingBar.style.display = "block";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = function() {
+      createUnityInstance(canvas, config, function(progress) {
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then(function(unityInstance) {
+        loadingBar.style.display = "none";
+        fullscreenButton.onclick = function() {
+          unityInstance.SetFullscreen(1);
+        };
+      }).catch(function(message) {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  })();
+</script>
+{{- end }}

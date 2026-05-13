@@ -1,0 +1,41 @@
+{{- define "main" }}
+
+{{/* ── Hero: full-width home info (the rich _index.md content) ── */}}
+{{- if site.Params.homeInfoParams }}
+{{- partial "home_info.html" . }}
+{{- end }}
+
+{{/* ── Recent Posts: card grid ── */}}
+{{- $posts := where site.RegularPages "Type" "in" (slice "posts") }}
+{{- $posts = where $posts "Params.hiddenInHomeList" "!=" "true" }}
+{{- $posts = first 6 $posts }}
+
+{{- if $posts }}
+<section class="home-posts-section">
+  <h2 class="home-section-title">Recent Posts</h2>
+  <div class="home-post-grid">
+    {{- range $posts }}
+    <article class="home-post-card">
+      <div class="home-post-card-inner">
+        <div class="home-post-meta">
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+          {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+          {{- with (index (.GetTerms $tags) 0) }}
+          <span class="home-post-tag">{{ .LinkTitle }}</span>
+          {{- end }}
+        </div>
+        <h3 class="home-post-title">{{ .Title }}</h3>
+        <p class="home-post-summary">{{ .Summary | plainify | htmlUnescape | truncate 120 }}</p>
+        <a class="home-post-link" href="{{ .Permalink }}">Read more →</a>
+      </div>
+      <a class="home-post-card-overlay" href="{{ .Permalink }}" aria-label="{{ .Title }}"></a>
+    </article>
+    {{- end }}
+  </div>
+  <div class="home-posts-all">
+    <a href="/posts/">View all posts →</a>
+  </div>
+</section>
+{{- end }}
+
+{{- end }}{{/* end main */}}

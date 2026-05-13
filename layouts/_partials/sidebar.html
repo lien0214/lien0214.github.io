@@ -1,0 +1,84 @@
+{{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+{{- $postTags := $.GetTerms $tags }}
+
+<aside class="post-sidebar">
+
+  {{/* ── Mini Profile Card ── */}}
+  <div class="sidebar-card">
+    <div class="sidebar-profile">
+      <div class="sidebar-avatar">
+        {{- if site.Params.avatar }}
+        <img src="{{ site.Params.avatar }}" alt="{{ site.Params.authorName | default "Yi-Wei Lien" }}">
+        {{- else }}
+        YWL
+        {{- end }}
+      </div>
+      <p class="sidebar-name">{{ site.Params.authorName | default "Yi-Wei Lien" }}</p>
+      <p class="sidebar-bio">{{ site.Params.authorBio | default "Backend & AI Engineer · NTU CS MS · MIRLab · MSLab" }}</p>
+      <div class="sidebar-socials">
+        <a href="https://github.com/lien0214" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/yi-wei-lien/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ted20030214@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Table of Contents ── */}}
+  {{- if and (.Param "ShowToc") .TableOfContents }}
+  <div class="sidebar-card">
+    <div class="sidebar-card-title">On this page</div>
+    <nav class="sidebar-toc" id="sidebar-toc">
+      {{- $toc := .TableOfContents }}
+      {{- $toc = replaceRE `<nav id="TableOfContents">` `` $toc }}
+      {{- $toc = replaceRE `</nav>` `` $toc }}
+      {{- $toc = replaceRE `<ul>\s*<li>` `<ul><li>` $toc }}
+      {{/* Flatten nested lists for cleaner sidebar display */}}
+      {{- $toc | safeHTML }}
+    </nav>
+  </div>
+  {{- end }}
+
+  {{/* ── Tags ── */}}
+  {{- if $postTags }}
+  <div class="sidebar-card">
+    <div class="sidebar-card-title">Tags</div>
+    <div class="sidebar-tags">
+      {{- range $postTags }}
+      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+
+</aside>
+
+{{/* ── Scroll-spy: highlight active TOC item ── */}}
+<script>
+(function () {
+  const toc = document.getElementById("sidebar-toc");
+  if (!toc) return;
+
+  const links = Array.from(toc.querySelectorAll("a"));
+  if (!links.length) return;
+
+  const headings = links.map(a => {
+    const id = decodeURIComponent(a.getAttribute("href").replace("#", ""));
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function onScroll() {
+    let current = headings[0];
+    for (const h of headings) {
+      if (h.getBoundingClientRect().top <= 100) current = h;
+    }
+    links.forEach(a => a.classList.remove("active"));
+    const activeLink = links.find(a =>
+      decodeURIComponent(a.getAttribute("href").replace("#", "")) === current?.id
+    );
+    if (activeLink) activeLink.classList.add("active");
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
+</script>

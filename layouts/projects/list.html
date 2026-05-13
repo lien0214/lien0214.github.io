@@ -1,0 +1,45 @@
+{{- define "main" }}
+
+<div class="projects-page">
+
+  <div class="projects-header">
+    <h1 class="projects-title">{{ .Title }}</h1>
+    {{- with .Description }}<p class="projects-desc">{{ . }}</p>{{- end }}
+  </div>
+
+  {{/* Group pages by category */}}
+  {{- $research := slice }}
+  {{- $other := slice }}
+  {{- range .Pages }}
+    {{- if eq .Params.category "Research" }}
+      {{- $research = $research | append . }}
+    {{- else }}
+      {{- $other = $other | append . }}
+    {{- end }}
+  {{- end }}
+
+  {{- if $research }}
+  <section class="projects-section">
+    <h2 class="projects-section-title">Research</h2>
+    <div class="projects-grid">
+      {{- range $research }}
+        {{- partial "project-card.html" . }}
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  {{- if $other }}
+  <section class="projects-section">
+    <h2 class="projects-section-title">Projects</h2>
+    <div class="projects-grid">
+      {{- range $other }}
+        {{- partial "project-card.html" . }}
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+</div>
+
+{{- end }}

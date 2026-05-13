@@ -1,0 +1,19 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header home-info-header">
+        {{- with site.Params.avatar }}
+        <div class="home-avatar-wrap">
+            <img src="{{ . }}" alt="{{ site.Params.authorName | default "Yi-Wei Lien" }}" class="home-avatar">
+        </div>
+        {{- end }}
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
