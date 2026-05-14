@@ -4,7 +4,7 @@ url: /en/about/
 summary: about
 ---
 
-<img src="/images/avatar/Avatar.png" alt="Yi-Wei Lien" class="about-avatar">
+<img src="/images/avatar/Portraits.PNG" alt="Yi-Wei Lien" class="about-avatar">
 
 # About Yi-Wei Lien (連奕維)
 
