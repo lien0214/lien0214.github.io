@@ -81,6 +81,14 @@
     margin: 0 auto;
 }
 
+/* ── List page thumbnails: smaller cap ── */
+.post-entry .entry-cover img {
+    max-height: 220px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* ── Post page: 2-column grid (content + sidebar) ── */
 .post-with-sidebar {
     display: grid;

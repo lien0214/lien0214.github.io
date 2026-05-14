@@ -122,9 +122,9 @@ params:
       url: mailto:ted20030214@gmail.com
 
   cover:
-    hidden: true
-    hiddenInList: true
-    hiddenInSingle: true
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
 
   editPost:
     URL: https://github.com/lien0214/lien0214.github.io/blob/main/content
