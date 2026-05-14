@@ -73,11 +73,12 @@
     }
 }
 
-/* ── Post cover image: cap height so tall photos don't dominate ── */
+/* ── Post cover image: cap height, preserve full image without cropping ── */
 .entry-cover img {
-    max-height: 420px;
-    object-fit: cover;
-    object-position: center;
+    max-height: 480px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* ── Post page: 2-column grid (content + sidebar) ── */
