@@ -13,6 +13,7 @@ languages:
   en:
     contentDir: content/en
     label: EN
+    languageName: EN
     weight: 1
     title: Yi-Wei Lien
     params:
@@ -48,6 +49,7 @@ languages:
   zh-tw:
     contentDir: content/zh-tw
     label: 中文
+    languageName: 中文
     weight: 2
     title: 連奕維
     params:
@@ -90,6 +92,7 @@ params:
   author: Yi-Wei Lien
   avatar: /images/avatar/Avatar.png
   defaultTheme: auto
+  displayFullLangName: true
   disableThemeToggle: false
   ShowReadingTime: true
   ShowShareButtons: false
