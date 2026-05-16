@@ -4,7 +4,7 @@ url: /zh-tw/about/
 summary: about
 ---
 
-<img src="/images/avatar/Portraits.PNG" alt="連奕維" class="about-avatar">
+<img src="/images/avatar/Portraits.jpg" alt="連奕維" class="about-avatar">
 
 # About Yi-Wei Lien (連奕維)
 

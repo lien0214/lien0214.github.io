@@ -20,8 +20,8 @@ Built from scratch by crowdsourcing emoji-to-Mandarin mappings and applying rule
 ## Models and Results
 
 <div style="display:flex; gap:20px; align-items:center; margin-bottom:18px; flex-wrap:wrap;">
-  <img src="/images/projects/taiwan-llama-v1.0.png" alt="Taiwan-LLaMA" style="height:110px; width:auto; border-radius:8px;">
-  <img src="/images/projects/lora-peft.png" alt="LoRA architecture" style="height:110px; width:auto; border-radius:8px; background:#f5f0e8;">
+  <img src="/images/projects/taiwan-llama-v1.0.jpg" alt="Taiwan-LLaMA" style="height:110px; width:auto; border-radius:8px;">
+  <img src="/images/projects/lora-peft.jpg" alt="LoRA architecture" style="height:110px; width:auto; border-radius:8px; background:#f5f0e8;">
 </div>
 
 Fine-tuned **Taiwan-LLaMA** and **Google mT5** using LoRA with RLHF-style preference optimization.
