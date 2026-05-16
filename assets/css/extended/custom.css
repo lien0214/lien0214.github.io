@@ -705,3 +705,59 @@
     border-color: var(--primary);
     background: var(--theme);
 }
+
+/* ── Contact page ── */
+.contact-intro {
+    color: var(--secondary);
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 480px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none !important;
+    color: var(--primary) !important;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.contact-item:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.contact-item-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    flex-shrink: 0;
+}
+
+.contact-item-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 2px;
+}
+
+.contact-item-value {
+    font-size: 14px;
+    color: var(--primary);
+}

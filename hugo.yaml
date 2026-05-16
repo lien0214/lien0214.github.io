@@ -39,12 +39,18 @@ languages:
         - name: Projects
           url: /en/projects/
           weight: 3
+        - name: Resume
+          url: /en/resume/
+          weight: 4
+        - name: Contact
+          url: /en/contact/
+          weight: 5
         - name: Game
           url: /en/game/
-          weight: 4
+          weight: 6
         - name: Search
           url: /en/search/
-          weight: 5
+          weight: 7
 
   zh-tw:
     contentDir: content/zh-tw
@@ -75,12 +81,18 @@ languages:
         - name: 專案
           url: /zh-tw/projects/
           weight: 3
+        - name: 履歷
+          url: /zh-tw/resume/
+          weight: 4
+        - name: 聯絡
+          url: /zh-tw/contact/
+          weight: 5
         - name: 遊戲
           url: /zh-tw/game/
-          weight: 4
+          weight: 6
         - name: 搜尋
           url: /zh-tw/search/
-          weight: 5
+          weight: 7
 
 outputs:
   home:
