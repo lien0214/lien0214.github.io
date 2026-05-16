@@ -121,20 +121,30 @@
     object-position: center;
 }
 
-/* ── Post page: 2-column grid (content + sidebar) ── */
+/* ── Post page: widen outer container on post pages so the 3-col grid fits ── */
+body:has(.post-with-sidebar) .main {
+    max-width: calc(1280px + calc(var(--gap) * 2));
+}
+
+/* ── Post page: 3-column grid (balancer | content | sidebar) ──
+   Column 1 (1fr) balances the left so content appears centered.
+   Column 2 holds the article. Column 3 holds the sidebar. ── */
 .post-with-sidebar {
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 48px;
+    grid-template-columns: 1fr minmax(0, 740px) 260px;
+    column-gap: 48px;
+    row-gap: 0;
     align-items: start;
 }
 
 .post-with-sidebar .post-main {
-    min-width: 0; /* prevent overflow in grid */
+    grid-column: 2;
+    min-width: 0;
 }
 
 /* ── Sidebar ── */
 .post-sidebar {
+    grid-column: 3;
     position: sticky;
     top: calc(var(--header-height, 60px) + 24px);
     display: flex;
@@ -286,14 +296,33 @@
     display: none;
 }
 
-/* ── Mobile: stack sidebar below content ── */
+/* ── Medium screens: drop back to 2-col when viewport can't fit the 3-col layout ── */
+@media (max-width: 1200px) {
+    body:has(.post-with-sidebar) .main {
+        max-width: calc(var(--main-width) + calc(var(--gap) * 2));
+    }
+    .post-with-sidebar {
+        grid-template-columns: 1fr 260px;
+        column-gap: 40px;
+    }
+    .post-with-sidebar .post-main {
+        grid-column: 1;
+    }
+    .post-sidebar {
+        grid-column: 2;
+    }
+}
+
+/* ── Mobile: single column, hide sidebar ── */
 @media (max-width: 900px) {
     .post-with-sidebar {
         grid-template-columns: 1fr;
     }
-
+    .post-with-sidebar .post-main {
+        grid-column: 1;
+    }
     .post-sidebar {
-        position: static;
+        display: none;
     }
 }
 
