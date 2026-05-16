@@ -2,6 +2,10 @@
 title: "Bubblo — 2D Platformer"
 description: "A complete 2D pixel-perfect platformer built in Unity over one semester. Led a 6-person team through 600+ commits to a stable 60fps demo with 5 levels and a full game loop."
 date: 2025-04-01
+cover:
+  image: /images/projects/bubblo-cover.png
+  alt: "Bubblo title screen"
+  relative: false
 period: "Apr 2025 – Jun 2025"
 team: "6-person team · Project Lead"
 category: "Project"

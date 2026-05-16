@@ -2,6 +2,10 @@
 title: "Bubblo — 2D 平台遊戲"
 description: "用 Unity 在一學期內完成的完整 2D 像素平台遊戲。帶領 6 人團隊 600+ commits，穩定跑在 60fps，5 個關卡，完整遊戲循環。"
 date: 2025-04-01
+cover:
+  image: /images/projects/bubblo-cover.png
+  alt: "Bubblo 標題畫面"
+  relative: false
 period: "2025 年 4 月 – 6 月"
 team: "6 人團隊 · 專案負責人"
 category: "Project"
