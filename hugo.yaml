@@ -33,14 +33,14 @@ languages:
         - name: About
           url: /en/about/
           weight: 1
-        - name: Posts
-          url: /en/posts/
-          weight: 2
-        - name: Projects
-          url: /en/projects/
-          weight: 3
         - name: Resume
           url: /en/resume/
+          weight: 2
+        - name: Posts
+          url: /en/posts/
+          weight: 3
+        - name: Projects
+          url: /en/projects/
           weight: 4
         - name: Contact
           url: /en/contact/
@@ -48,9 +48,6 @@ languages:
         - name: Game
           url: /en/game/
           weight: 6
-        - name: Search
-          url: /en/search/
-          weight: 7
 
   zh-tw:
     contentDir: content/zh-tw
