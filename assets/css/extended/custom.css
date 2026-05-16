@@ -1,7 +1,39 @@
-/* ── Widen the main container to accommodate sidebar ── */
+/* ═══════════════════════════════════════════════
+   THEME OVERRIDES
+   Light: warm ivory + deep burgundy (#563444)
+   Dark:  softer mid-grey, reduced text contrast
+═══════════════════════════════════════════════ */
+
+/* Light theme — warm */
 :root {
     --main-width: 1080px;
+    --theme:      #faf7f5;
+    --entry:      #f2ebe7;
+    --primary:    #563444;
+    --secondary:  #9a7282;
+    --tertiary:   #e0d2cc;
+    --content:    #4a3545;
+    --code-bg:    #ece3de;
+    --code-block-bg: #2a2035;
+    --border:     #dfd0ca;
+    color-scheme: light;
 }
+
+/* Dark theme — lighter grey, soft text */
+:root[data-theme="dark"] {
+    --theme:      #252830;
+    --entry:      #2e3140;
+    --primary:    #d8d8db;
+    --secondary:  #9899a2;
+    --tertiary:   #3d4052;
+    --content:    #c2c3c8;
+    --code-bg:    #313444;
+    --code-block-bg: #272a38;
+    --border:     #3c3f50;
+    color-scheme: dark;
+}
+
+/* ── Widen the main container to accommodate sidebar ── */
 
 /* ── Language switcher pill ── */
 .lang-menu {
