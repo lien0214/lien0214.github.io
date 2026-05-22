@@ -25,6 +25,29 @@
   .game-info { max-width: 960px; margin: 0 auto; }
   .game-info h2 { font-size: 1.2rem; margin-bottom: 12px; }
   .game-info p { color: var(--secondary); line-height: 1.7; }
+  .game-mobile-notice {
+    display: none;
+    max-width: 960px;
+    margin: 0 auto 32px;
+    padding: 24px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .game-mobile-notice p { color: var(--secondary); margin-bottom: 16px; font-size: 0.95rem; }
+  .game-mobile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: var(--primary);
+    color: var(--theme) !important;
+    border-radius: 6px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
 </style>
 
 <div class="game-page">
@@ -40,16 +63,33 @@
     </div>
   </div>
 
-  <div class="game-embed-wrapper">
+  <div class="game-embed-wrapper" id="game-embed">
     <iframe
       src="https://itch.io/embed-upload/17635570?color=333333"
       allowfullscreen>
-      <a href="https://lien0214.itch.io/bubblo">Play Bubblo on itch.io</a>
     </iframe>
+  </div>
+
+  <div class="game-mobile-notice" id="game-mobile-notice">
+    <p>WebGL games don't run well on mobile browsers.<br>Play on a desktop for the full experience.</p>
+    <a href="https://lien0214.itch.io/bubblo" target="_blank" rel="noopener" class="game-mobile-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Play on itch.io
+    </a>
   </div>
 
   <div class="game-info">
     {{ .Content }}
   </div>
 </div>
+
+<script>
+(function () {
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    document.getElementById("game-embed").style.display = "none";
+    document.getElementById("game-mobile-notice").style.display = "block";
+  }
+})();
+</script>
 {{- end }}
