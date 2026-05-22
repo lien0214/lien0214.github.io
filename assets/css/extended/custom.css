@@ -735,6 +735,14 @@ body:has(.post-with-sidebar) .main {
     background: var(--theme);
 }
 
+/* ── Resume action buttons ── */
+.resume-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
 /* ── Contact page ── */
 .contact-intro {
     color: var(--secondary);

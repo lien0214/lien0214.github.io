@@ -8,6 +8,17 @@ ShowReadingTime: false
 hidemeta: true
 ---
 
+<div class="resume-actions">
+  <a href="https://docs.google.com/document/d/1ex03nMrG39PNcYmrhyTIjWRjyq-7_Xnwdin7b2-WNPA/edit" target="_blank" rel="noopener" class="project-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    View CV
+  </a>
+  <a href="https://docs.google.com/document/d/1ex03nMrG39PNcYmrhyTIjWRjyq-7_Xnwdin7b2-WNPA/export?format=pdf" target="_blank" rel="noopener" class="project-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
+</div>
+
 ## Education
 
 | | |
@@ -54,7 +65,7 @@ Data Structures & Algorithms
 ## Projects
 
 ### ICC Mem/Gen · MSLab
-*Mar 2026 – Jun 2026 · 4-person Team · 4-month Sprint*
+*Mar 2026 – May 2026 · 4-person Team · 4-month Sprint*
 
 `Knowledge Conflict` `SFT` `PEFT` `LoRA` `Activation Steering`
 
@@ -62,7 +73,7 @@ Data Structures & Algorithms
 - Used Activation Steering to prove that fine-tuned behavioral vectors can steer frozen base models
 
 ### Algorithm Trading Project · MIRLab
-*Jan 2026 – Jun 2026 · 3-person Team · Ongoing*
+*Jan 2026 – May 2026 · 3-person Team · Ongoing*
 
 `Quant` `TWSE` `Daily Strategy`
 
