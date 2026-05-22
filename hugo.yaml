@@ -99,7 +99,7 @@ outputs:
 
 params:
   author: Yi-Wei Lien
-  avatar: /images/avatar/Avatar.png
+  avatar: /images/avatar/Portraits.jpg
   defaultTheme: auto
   displayFullLangName: true
   disableThemeToggle: false
