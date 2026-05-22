@@ -17,3 +17,144 @@
     </footer>
 </article>
 {{- end -}}
+
+<!-- ── Terminal Hero ── -->
+<div class="terminal-hero" id="terminal-hero" aria-hidden="true">
+    <div class="terminal-titlebar">
+        <span class="terminal-dot dot-red"></span>
+        <span class="terminal-dot dot-yellow"></span>
+        <span class="terminal-dot dot-green"></span>
+        <span class="terminal-title">~/portfolio</span>
+    </div>
+    <div class="terminal-body" id="terminal-body"></div>
+</div>
+
+<!-- ── Currently Section ── -->
+<div class="currently-section">
+    <div class="currently-header">
+        <span class="currently-label">CURRENTLY</span>
+        <span class="currently-dot"></span>
+        <span class="currently-date">May 2026</span>
+    </div>
+    <ul class="currently-list">
+        <li>
+            <span class="currently-icon">🔬</span>
+            <div>
+                <strong>MSLab</strong> — LLM knowledge conflicts &amp; activation steering
+                <span class="currently-tag">NeurIPS 2026 target</span>
+            </div>
+        </li>
+        <li>
+            <span class="currently-icon">📈</span>
+            <div>
+                <strong>MIRLab</strong> — Quant daily strategy on TWSE
+            </div>
+        </li>
+        <li>
+            <span class="currently-icon">💼</span>
+            <div>
+                <strong>Open to</strong> — AI Engineer / Backend AI roles
+                <span class="currently-tag">available 2027</span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+(function () {
+  var SEQUENCE = [
+    { cmd: 'whoami', out: [
+        'Yi-Wei Lien  ·  Backend & AI Engineer',
+        'NTU CS MS  ·  MIRLab  ·  MSLab',
+    ]},
+    { cmd: 'cat focus.txt', out: [
+        '▸ LLM knowledge conflicts & activation steering',
+        '▸ Quant daily strategy on TWSE',
+        '▸ Open to AI Engineer / Backend AI roles',
+    ]},
+    { cmd: 'ls projects/', out: [
+        'icc-mem-gen/   algo-trading/   bubblo/   e-motchi/',
+    ]},
+  ];
+
+  var CHAR_DELAY  = 42;   /* ms per character while typing a command */
+  var POST_CMD    = 180;  /* pause after command before showing output */
+  var POST_OUT    = 500;  /* pause after output block before next command */
+
+  var body = document.getElementById('terminal-body');
+  if (!body) return;
+
+  function makePromptLine(typed, done) {
+    var line = document.createElement('div');
+    line.className = 'terminal-line';
+    line.innerHTML =
+      '<span class="t-prompt">❯</span>' +
+      '<span class="t-cmd">' + escHtml(typed) + '</span>' +
+      (done ? '' : '<span class="t-cursor">█</span>');
+    return line;
+  }
+
+  function makeOutputLine(text) {
+    var line = document.createElement('div');
+    line.className = 'terminal-line t-output';
+    line.textContent = text;
+    return line;
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function runSequence(idx) {
+    if (idx >= SEQUENCE.length) {
+      /* finished — show final blinking cursor */
+      var last = document.createElement('div');
+      last.className = 'terminal-line';
+      last.innerHTML = '<span class="t-prompt">❯</span><span class="t-cursor blink">█</span>';
+      body.appendChild(last);
+      return;
+    }
+
+    var step    = SEQUENCE[idx];
+    var cmdLine = makePromptLine('', false);
+    body.appendChild(cmdLine);
+
+    var cmdSpan    = cmdLine.querySelector('.t-cmd');
+    var cursorSpan = cmdLine.querySelector('.t-cursor');
+    var typed      = '';
+    var charIdx    = 0;
+
+    function typeChar() {
+      if (charIdx < step.cmd.length) {
+        typed += step.cmd[charIdx++];
+        cmdSpan.textContent = typed;
+        setTimeout(typeChar, CHAR_DELAY);
+      } else {
+        /* command fully typed — remove inline cursor, pause, show output */
+        cursorSpan && cursorSpan.remove();
+        setTimeout(function () {
+          step.out.forEach(function (text) {
+            body.appendChild(makeOutputLine(text));
+          });
+          body.appendChild(document.createElement('div')); /* empty spacer */
+          setTimeout(function () { runSequence(idx + 1); }, POST_OUT);
+        }, POST_CMD);
+      }
+    }
+    typeChar();
+  }
+
+  /* start when terminal scrolls into view */
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        observer.disconnect();
+        runSequence(0);
+      }
+    }, { threshold: 0.3 });
+    observer.observe(document.getElementById('terminal-hero'));
+  } else {
+    runSequence(0);
+  }
+})();
+</script>
