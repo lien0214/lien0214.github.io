@@ -28,8 +28,6 @@ hidemeta: true
 
 **研究室：** MIRLab（音樂與 AI 研究室）· MSLab
 
----
-
 ## 工作經歷
 
 ### 軟體工程師實習 · Shopback
@@ -60,8 +58,6 @@ hidemeta: true
 
 資料結構與演算法
 
----
-
 ## 專案
 
 ### ICC Mem/Gen · MSLab
@@ -91,8 +87,6 @@ hidemeta: true
 `NLP` `Taiwan-LLaMA` `Google mT5` `LoRA` `RLHF`
 
 - 使用 LoRA 搭配 RLHF 風格的偏好優化，微調多語言 LLM 進行 Emoji ↔ 繁體中文翻譯
-
----
 
 ## 技術能力
 

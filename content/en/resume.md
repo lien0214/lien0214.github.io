@@ -21,14 +21,10 @@ hidemeta: true
 
 ## Education
 
-| | |
-|---|---|
-| **MS, Computer Science** | National Taiwan University · 2025–2027 |
-| **BS, Computer Science** | National Taiwan University · 2021–2025 · Graduated |
+- **MS, Computer Science**, National Taiwan University · 2025–2027 · Expected Graduation 2027
+- **BS, Computer Science**, National Taiwan University · 2021–2025 · Graduated
 
 **Labs:** MIRLab (Music & AI Research Lab) · MSLab
-
----
 
 ## Work Experience
 
@@ -58,9 +54,7 @@ hidemeta: true
 ### Teaching Assistant · Dept. of CS, NTU
 *Feb 2023 – Jun 2023 · Taipei, Taiwan · On-site*
 
-Data Structures & Algorithms
-
----
+`Data Structures` `Algorithms`
 
 ## Projects
 
@@ -91,8 +85,6 @@ Data Structures & Algorithms
 `NLP` `Taiwan-LLaMA` `Google mT5` `LoRA` `RLHF`
 
 - Fine-tuned multilingual LLMs using LoRA with RLHF-style preference optimization for emoji-to-Mandarin translation
-
----
 
 ## Skills
 
