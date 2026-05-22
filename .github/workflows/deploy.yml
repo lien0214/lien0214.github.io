@@ -16,19 +16,24 @@ concurrency:
 
 jobs:
 
-  # ── 1. Build ─────────────────────────────────────────────────────
+  # ── 1. Build + Quality (lighthouse gates the pages artifact upload) ──
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with:
           submodules: recursive
-          fetch-depth: 0
+          fetch-depth: 1          # full history not needed
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: latest
+          hugo-version: '0.161.1' # pinned — avoids per-run latest lookup
           extended: true
 
       - name: Build
@@ -36,44 +41,15 @@ jobs:
         env:
           HUGO_PARAMS_GAID: ${{ secrets.GA_MEASUREMENT_ID }}
 
-      - name: Upload site for Lighthouse
-        uses: actions/upload-artifact@v7
-        with:
-          name: site
-          path: ./public
-
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./public
-
-  # ── 2. Quality gate (blocks deploy on failure) ───────────────────
-  quality:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      - name: Download built site
-        uses: actions/download-artifact@v8
-        with:
-          name: site
-          path: ./public
-
       - name: Serve built site on port 3000
         run: python3 -m http.server 3000 --directory ./public &
 
       - name: Wait for server to be ready
         run: |
-          for i in $(seq 1 15); do
+          for i in $(seq 1 20); do
             curl -sf http://localhost:3000/en/ > /dev/null && echo "Server ready" && break
             echo "Attempt $i — waiting..."
-            sleep 2
+            sleep 1
           done
 
       - name: Lighthouse CI
@@ -87,9 +63,14 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
 
-  # ── 3. Deploy (only if quality passes) ───────────────────────────
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
+
+  # ── 2. Deploy (only if build + quality passed) ───────────────────
   deploy:
-    needs: quality
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
