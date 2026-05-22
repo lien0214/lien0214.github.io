@@ -4,6 +4,11 @@
    Dark:  softer mid-grey, reduced text contrast
 ═══════════════════════════════════════════════ */
 
+/* ── Scale the whole page to match comfortable 125% browser zoom ── */
+@media (min-width: 1200px) {
+    html { zoom: 1.25; }
+}
+
 /* Light theme — warm */
 :root {
     --main-width: 1080px;
