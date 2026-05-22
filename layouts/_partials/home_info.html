@@ -1,64 +1,85 @@
 {{- with site.Params.homeInfoParams }}
-<article class="first-entry home-info">
-    <header class="entry-header home-info-header">
-        {{- with site.Params.avatar }}
-        <div class="home-avatar-wrap">
-            <img src="{{ . }}" alt="{{ site.Params.authorName | default "Yi-Wei Lien" }}" class="home-avatar">
-        </div>
-        {{- end }}
-        <h1>{{ .Title | markdownify }}</h1>
-    </header>
-    <div class="entry-content md-content">
-        {{ $opts := dict "display" "block" }}
-        {{ .Content | $.Page.RenderString $opts }}
-    </div>
-    <footer class="entry-footer">
-        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
-    </footer>
-</article>
-{{- end -}}
+<div class="bento-grid">
 
-<!-- ── Terminal Hero ── -->
-<div class="terminal-hero" id="terminal-hero" aria-hidden="true">
-    <div class="terminal-titlebar">
+  {{/* ── Identity card ── */}}
+  <div class="bento-card bento-identity">
+    <div class="bento-identity-top">
+      {{- with site.Params.avatar }}
+      <img src="{{ . }}" alt="{{ site.Params.authorName | default "Yi-Wei Lien" }}" class="bento-avatar">
+      {{- end }}
+      <div class="bento-identity-text">
+        <h1 class="bento-name">{{ .Title | markdownify }}</h1>
+        <div class="bento-bio">
+          {{ $opts := dict "display" "block" }}
+          {{ .Content | $.Page.RenderString $opts }}
+        </div>
+      </div>
+    </div>
+    <div class="bento-identity-footer">
+      <div class="bento-social-row">
+        {{ partial "social_icons.html" (dict "align" "left") }}
+      </div>
+      <div class="bento-ctas">
+        {{- if eq $.Page.Lang "zh-tw" }}
+        <a href="{{ relLangURL "/projects/" }}" class="bento-btn bento-btn-primary">專案</a>
+        <a href="{{ relLangURL "/resume/" }}" class="bento-btn bento-btn-outline">履歷</a>
+        {{- else }}
+        <a href="{{ relLangURL "/projects/" }}" class="bento-btn bento-btn-primary">View Projects</a>
+        <a href="{{ relLangURL "/resume/" }}" class="bento-btn bento-btn-outline">Resume</a>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Currently card ── */}}
+  <div class="bento-card bento-currently-card">
+    <div class="bento-currently-header">
+      <span class="currently-dot"></span>
+      <span class="bento-eyebrow">CURRENTLY</span>
+      <span class="bento-currently-date">May 2026</span>
+    </div>
+    <ul class="bento-status-list">
+      <li class="bento-status-item">
+        <span class="bento-status-icon">🔬</span>
+        <div class="bento-status-body">
+          <strong>MSLab</strong>
+          <span class="bento-status-desc">LLM knowledge conflicts &amp; activation steering</span>
+          <span class="currently-tag">NeurIPS 2026</span>
+        </div>
+      </li>
+      <li class="bento-status-item">
+        <span class="bento-status-icon">📈</span>
+        <div class="bento-status-body">
+          <strong>MIRLab</strong>
+          <span class="bento-status-desc">Quant daily strategy on TWSE</span>
+        </div>
+      </li>
+      <li class="bento-status-item">
+        <span class="bento-status-icon">💼</span>
+        <div class="bento-status-body">
+          <strong>Open to</strong>
+          <span class="bento-status-desc">AI Engineer / Backend AI roles</span>
+          <span class="currently-tag">available 2027</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  {{/* ── Terminal card ── */}}
+  <div class="bento-card bento-terminal-card">
+    <div class="terminal-hero" id="terminal-hero" aria-hidden="true">
+      <div class="terminal-titlebar">
         <span class="terminal-dot dot-red"></span>
         <span class="terminal-dot dot-yellow"></span>
         <span class="terminal-dot dot-green"></span>
         <span class="terminal-title">~/portfolio</span>
+      </div>
+      <div class="terminal-body" id="terminal-body"></div>
     </div>
-    <div class="terminal-body" id="terminal-body"></div>
-</div>
+  </div>
 
-<!-- ── Currently Section ── -->
-<div class="currently-section">
-    <div class="currently-header">
-        <span class="currently-label">CURRENTLY</span>
-        <span class="currently-dot"></span>
-        <span class="currently-date">May 2026</span>
-    </div>
-    <ul class="currently-list">
-        <li>
-            <span class="currently-icon">🔬</span>
-            <div>
-                <strong>MSLab</strong> — LLM knowledge conflicts &amp; activation steering
-                <span class="currently-tag">NeurIPS 2026 target</span>
-            </div>
-        </li>
-        <li>
-            <span class="currently-icon">📈</span>
-            <div>
-                <strong>MIRLab</strong> — Quant daily strategy on TWSE
-            </div>
-        </li>
-        <li>
-            <span class="currently-icon">💼</span>
-            <div>
-                <strong>Open to</strong> — AI Engineer / Backend AI roles
-                <span class="currently-tag">available 2027</span>
-            </div>
-        </li>
-    </ul>
 </div>
+{{- end -}}
 
 <script>
 (function () {
@@ -77,9 +98,9 @@
     ]},
   ];
 
-  var CHAR_DELAY  = 42;   /* ms per character while typing a command */
-  var POST_CMD    = 180;  /* pause after command before showing output */
-  var POST_OUT    = 500;  /* pause after output block before next command */
+  var CHAR_DELAY  = 42;
+  var POST_CMD    = 180;
+  var POST_OUT    = 500;
 
   var body = document.getElementById('terminal-body');
   if (!body) return;
@@ -107,7 +128,6 @@
 
   function runSequence(idx) {
     if (idx >= SEQUENCE.length) {
-      /* finished — show final blinking cursor */
       var last = document.createElement('div');
       last.className = 'terminal-line';
       last.innerHTML = '<span class="t-prompt">❯</span><span class="t-cursor blink">█</span>';
@@ -130,13 +150,12 @@
         cmdSpan.textContent = typed;
         setTimeout(typeChar, CHAR_DELAY);
       } else {
-        /* command fully typed — remove inline cursor, pause, show output */
         cursorSpan && cursorSpan.remove();
         setTimeout(function () {
           step.out.forEach(function (text) {
             body.appendChild(makeOutputLine(text));
           });
-          body.appendChild(document.createElement('div')); /* empty spacer */
+          body.appendChild(document.createElement('div'));
           setTimeout(function () { runSequence(idx + 1); }, POST_OUT);
         }, POST_CMD);
       }
@@ -144,7 +163,6 @@
     typeChar();
   }
 
-  /* start when terminal scrolls into view */
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
       if (entries[0].isIntersecting) {

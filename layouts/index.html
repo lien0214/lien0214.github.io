@@ -1,41 +1,78 @@
 {{- define "main" }}
 
-{{/* ── Hero: full-width home info (the rich _index.md content) ── */}}
+{{/* ── Bento grid hero ── */}}
 {{- if site.Params.homeInfoParams }}
 {{- partial "home_info.html" . }}
 {{- end }}
 
-{{/* ── Recent Posts: card grid ── */}}
+{{/* ── Recent Posts: horizontal scroll carousel ── */}}
 {{- $posts := where site.RegularPages "Type" "in" (slice "posts") }}
 {{- $posts = where $posts "Params.hiddenInHomeList" "!=" "true" }}
-{{- $posts = first 6 $posts }}
+{{- $posts = first 8 $posts }}
 
 {{- if $posts }}
-<section class="home-posts-section">
-  <h2 class="home-section-title">Recent Posts</h2>
-  <div class="home-post-grid">
+<section class="hp-carousel">
+  <div class="hp-carousel-header">
+    <h2 class="hp-carousel-title">
+      {{- if eq .Lang "zh-tw" }}最新文章{{- else }}Recent Posts{{- end }}
+    </h2>
+    <div class="hp-carousel-controls">
+      <button class="hp-nav-btn" id="hp-prev" aria-label="Previous">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hp-nav-btn" id="hp-next" aria-label="Next">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <a href="{{ relLangURL "/posts/" }}" class="hp-all-link">
+        {{- if eq .Lang "zh-tw" }}全部文章 →{{- else }}All posts →{{- end }}
+      </a>
+    </div>
+  </div>
+
+  <div class="hp-track" id="hp-track">
     {{- range $posts }}
-    <article class="home-post-card">
-      <div class="home-post-card-inner">
-        <div class="home-post-meta">
-          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
-          {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
-          {{- with (index (.GetTerms $tags) 0) }}
-          <span class="home-post-tag">{{ .LinkTitle }}</span>
-          {{- end }}
-        </div>
-        <h3 class="home-post-title">{{ .Title }}</h3>
-        <p class="home-post-summary">{{ .Summary | plainify | htmlUnescape | truncate 120 }}</p>
-        <a class="home-post-link" href="{{ .Permalink }}">Read more →</a>
+    <a href="{{ .RelPermalink }}" class="hp-card">
+      {{- if and .Params.cover .Params.cover.image (not .Params.cover.hidden) }}
+      <div class="hp-card-thumb">
+        <img src="{{ .Params.cover.image }}" alt="{{ .Title }}" loading="lazy">
       </div>
-      <a class="home-post-card-overlay" href="{{ .Permalink }}" aria-label="{{ .Title }}"></a>
-    </article>
+      {{- end }}
+      <div class="hp-card-body">
+        <time class="hp-card-date">{{ .Date.Format "Jan 2006" }}</time>
+        <h3 class="hp-card-title">{{ .Title }}</h3>
+        <p class="hp-card-summary">{{ .Summary | plainify | htmlUnescape | truncate 90 }}</p>
+        {{- with (index (.GetTerms "tags") 0) }}
+        <span class="hp-card-tag">{{ .LinkTitle }}</span>
+        {{- end }}
+      </div>
+    </a>
     {{- end }}
   </div>
-  <div class="home-posts-all">
-    <a href="/posts/">View all posts →</a>
-  </div>
 </section>
+
+<script>
+(function () {
+  var track = document.getElementById('hp-track');
+  if (!track) return;
+
+  function cardStep() {
+    var card = track.querySelector('.hp-card');
+    if (!card) return 294;
+    var style = window.getComputedStyle(track);
+    var gap = parseFloat(style.gap || style.columnGap) || 14;
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  var prev = document.getElementById('hp-prev');
+  var next = document.getElementById('hp-next');
+  if (prev) prev.addEventListener('click', function () {
+    track.scrollBy({ left: -cardStep() * 2, behavior: 'smooth' });
+  });
+  if (next) next.addEventListener('click', function () {
+    track.scrollBy({ left:  cardStep() * 2, behavior: 'smooth' });
+  });
+})();
+</script>
 {{- end }}
 
 {{- end }}{{/* end main */}}
