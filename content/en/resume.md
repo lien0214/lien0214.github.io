@@ -24,7 +24,7 @@ hidemeta: true
 - **MS, Computer Science**, National Taiwan University · 2025–2027 · Expected Graduation 2027
 - **BS, Computer Science**, National Taiwan University · 2021–2025 · Graduated
 
-**Labs:** MIRLab (Music & AI Research Lab) · MSLab
+**Labs:** [MIRLab](http://mirlab.org/) (Multimedia Information Retrieval Lab) · [MSLab](https://mslab.csie.ntu.edu.tw/) (Machine Intelligence and Agentic System Lab)
 
 ## Work Experience
 

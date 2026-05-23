@@ -9,8 +9,8 @@ summary: about
 
 I'm in the first year of my master's at NTU, simultaneously working in two research labs that cover very different parts of the AI space:
 
-- **MIRLab** — where I'm doing quantitative trading research on TWSE
-- **MSLab** — where my thesis work focuses on knowledge conflicts and memory in large language models
+- **[MIRLab](http://mirlab.org/)** (Multimedia Information Retrieval Lab) — where I'm doing quantitative trading research on TWSE
+- **[MSLab](https://mslab.csie.ntu.edu.tw/)** (Machine Intelligence and Agentic System Lab) — where my thesis work focuses on knowledge conflicts and memory in large language models
 
 Before grad school, I spent about 18 months as a backend engineer intern at Shopback and CMoney. I also did a research assistant at Academia Sinica's Citi TACC lab working on synthetic data generation for cybersecurity.
 
@@ -31,7 +31,7 @@ Before grad school, I spent about 18 months as a backend engineer intern at Shop
 - **MS, Computer Science**, National Taiwan University, 2025–2027 · Expected Graduation 2027
 - **BS, Computer Science**, National Taiwan University, 2021–2025 · Graduated
 
-**Labs:** MIRLab (Music and AI Research Lab), MSLab
+**Labs:** [MIRLab](http://mirlab.org/) (Multimedia Information Retrieval Lab) · [MSLab](https://mslab.csie.ntu.edu.tw/) (Machine Intelligence and Agentic System Lab)
 
 ## Experience Timeline
 

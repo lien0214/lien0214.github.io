@@ -26,7 +26,7 @@ hidemeta: true
 | **資訊工程系碩士** | 國立台灣大學 · 2025–2027 |
 | **資訊工程系學士** | 國立台灣大學 · 2021–2025 · 已畢業 |
 
-**研究室：** MIRLab（音樂與 AI 研究室）· MSLab
+**研究室：** [MIRLab](http://mirlab.org/)（多媒體資訊檢索實驗室）· [MSLab](https://mslab.csie.ntu.edu.tw/)（機器智慧與智能代理系統實驗室）
 
 ## 工作經歷
 

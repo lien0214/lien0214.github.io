@@ -6,7 +6,7 @@ title: "Yi-Wei Lien · 連奕維"
 
 ### **Backend & AI Engineer · NTU CS MS · MIRLab · MSLab**
 
-I'm a CS master's student at National Taiwan University, split between two labs: [MIRLab](https://mirlab.org) (Multimedia Information Retrieval Lab, where I work on quantitative trading strategies for TWSE) and MSLab (Machine Discovery and Social Network Mining, where I research knowledge conflicts and memory in large language models). Before grad school I spent 1.5 years building backend systems at Shopback and Cmoney — real products, real traffic, real fire drills.
+I'm a CS master's student at National Taiwan University, split between two labs: [MIRLab](http://mirlab.org/) (Multimedia Information Retrieval Lab, where I work on quantitative trading strategies for TWSE) and [MSLab](https://mslab.csie.ntu.edu.tw/) (Machine Intelligence and Agentic System Lab, where I research knowledge conflicts and memory in large language models). Before grad school I spent 1.5 years building backend systems at Shopback and Cmoney — real products, real traffic, real fire drills.
 
 I care about two things that often get siloed: making backend systems that *actually don't fall over*, and understanding AI at a research level. On the industry side I'm drawn to AI engineering and infrastructure — building the systems that make LLM products reliable at scale. On the research side I'm fascinated by agentic AI, RAG systems, and applying deep learning to quantitative trading. First year of the MS, thesis direction still open.
 

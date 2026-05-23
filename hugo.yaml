@@ -27,7 +27,7 @@ languages:
 
 
           I build reliable distributed systems and research how language models learn, forget, and remember.
-          Currently at [MIRLab](https://mirlab.org) (quant trading) and [MSLab](https://mslab-ntu.github.io) (LLM knowledge conflicts).
+          Currently at [MIRLab](http://mirlab.org/) (quant trading) and [MSLab](https://mslab.csie.ntu.edu.tw/) (LLM knowledge conflicts).
     menu:
       main:
         - name: About
@@ -66,7 +66,7 @@ languages:
 
 
           我在建構可靠的分散式系統，同時研究語言模型如何學習、遺忘與記憶。
-          目前在 [MIRLab](https://mirlab.org)（量化交易）和 MSLab（LLM 知識衝突）進行研究。
+          目前在 [MIRLab](http://mirlab.org/)（量化交易）和 [MSLab](https://mslab.csie.ntu.edu.tw/)（LLM 知識衝突）進行研究。
     menu:
       main:
         - name: 關於我

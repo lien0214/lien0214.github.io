@@ -11,8 +11,8 @@ summary: about
 
 我在台大碩士班就讀中，同時在兩個截然不同的 AI 研究室工作：
 
-- **[MIRLab](http://mirlab.org/)**（音樂與 AI 研究室）— 進行台股量化交易研究
-- **[MSLab](https://mslab.csie.ntu.edu.tw/)** — 論文研究聚焦於大型語言模型中的知識衝突與記憶問題
+- **[MIRLab](http://mirlab.org/)**（多媒體資訊檢索實驗室）— 進行台股量化交易研究
+- **[MSLab](https://mslab.csie.ntu.edu.tw/)**（機器智慧與智能代理系統實驗室）— 論文研究聚焦於大型語言模型中的知識衝突與記憶問題
 
 碩士前，我在 Shopback 和 Cmoney 擔任後端工程師實習約 18 個月。也在中研院 Citi 實驗室擔任研究助理，研究資安領域的合成資料生成。
 
@@ -30,7 +30,7 @@ summary: about
 | **資訊工程系碩士** | 國立台灣大學，2025–2027 |
 | **資訊工程系學士** | 國立台灣大學，2021–2025 |
 
-**研究室：** MIRLab、MSLab
+**研究室：** [MIRLab](http://mirlab.org/)（多媒體資訊檢索實驗室）、[MSLab](https://mslab.csie.ntu.edu.tw/)（機器智慧與智能代理系統實驗室）
 
 ## 經歷時間軸
 
