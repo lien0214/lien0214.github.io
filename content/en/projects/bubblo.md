@@ -1,6 +1,6 @@
 ---
 title: "Bubblo — 2D Platformer"
-description: "A complete 2D pixel-perfect platformer built in Unity over one semester. Led a 6-person team through 600+ commits to a stable 60fps demo with 5 levels and a full game loop."
+description: "A 2D pixel platformer built in Unity over one semester. Led a 6-person team through 600+ commits — bubble physics, a Wonderland full of caged villagers, and needle creatures that want to pop you."
 date: 2025-04-01
 period: "Apr 2025 – Jun 2025"
 team: "6-person team · Project Lead"
@@ -14,18 +14,22 @@ stack: ["Unity", "C#", "OOP", "Design Patterns", "Game Dev"]
 
 ## What It Is
 
-A 2D pixel-perfect platformer inspired by Mario and Kirby. Players navigate a bubble protagonist through side-scrolling levels, collecting treasures and battling enemies. Each world has boss encounters with individualized attack patterns.
+A 2D pixel platformer inspired by Mario and Kirby. You play as Bubblo — a bubble creature exploring a Wonderland, rescuing villagers trapped in cages, and fighting off a cast of needle-type enemies: bees, jumping spiders, and a unicorn that very much wants to pop you.
 
-**Mechanics**: Bouncing, floating, and dashing — used for both combat and puzzle-solving. Stable 60fps across all 5 levels.
+The core mechanic is bubble physics. You bounce, float, and use your bubble properties both for traversal and combat. Five levels, stable 60fps, a full game loop with lives and scoring.
 
-## My Role as Project Lead
+## My Role
 
-Designed the component architecture *before* any game code was written. We used Observer, State Machine, and Command patterns explicitly — because with 6 people touching the same codebase, implicit coupling kills velocity.
+I was project lead — which in practice meant translating loose PM-level ideas into actual, shippable game details, then keeping six people moving in the same direction for three months.
 
-Ran weekly standups and maintained the task board. Learned that project management in a student team is 80% unblocking people and 20% writing code yourself.
+Before a single line of game code was written, I designed the component architecture. We used Observer, State Machine, and Command patterns deliberately — not because it felt clever, but because with six people in the same codebase, implicit coupling kills velocity fast. Halfway through the sprint we ran a full refactor of the avatar behaviour system specifically to enforce these patterns more cleanly.
 
-The 600+ commits across the team produced a complete game loop: lives, scoring, audio, win/lose states, and a polished title screen.
+The workflow side was its own challenge. I came in with a surface-level understanding of agile from my Cmoney internship — standups, sprint planning, retrospectives. None of that transferred cleanly to a student team. People have lab work, other coursework, clubs, research. The rigid ceremony doesn't fit. So I stripped it down to something lighter: a shared task board, short async check-ins, and one weekly sync where the only goal was unblocking people.
 
-## Play It
+We used ChatGPT throughout — no IDE agents existed yet. Looking back it's interesting how much the workflow has changed in a year.
 
-The game is playable in your browser via WebGL — [try it here](/en/game/).
+## What Shipped
+
+600+ commits across the team. Five playable levels with distinct enemy patterns. Full audio. Win/lose states. A polished title screen. The demo runs at stable 60fps in WebGL.
+
+[Play it in your browser →](/en/game/)
