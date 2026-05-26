@@ -117,6 +117,22 @@
     return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
+  // Pre-render full content to lock height before animation starts
+  (function lockHeight() {
+    SEQUENCE.forEach(function (step) {
+      body.appendChild(makePromptLine(step.cmd, true));
+      step.out.forEach(function (t) { body.appendChild(makeOutputLine(t)); });
+      body.appendChild(document.createElement('div'));
+    });
+    var last = document.createElement('div');
+    last.className = 'terminal-line';
+    last.innerHTML = '<span class="t-prompt">❯</span><span class="t-cursor blink">█</span>';
+    body.appendChild(last);
+    body.style.height = body.scrollHeight + 'px';
+    body.style.overflow = 'hidden';
+    body.innerHTML = '';
+  })();
+
   function runSequence(idx) {
     if (idx >= SEQUENCE.length) {
       var last = document.createElement('div');

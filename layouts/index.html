@@ -41,8 +41,17 @@
         <time class="hp-card-date">{{ .Date.Format "Jan 2006" }}</time>
         <h3 class="hp-card-title">{{ .Title }}</h3>
         <p class="hp-card-summary">{{ .Summary | plainify | htmlUnescape | truncate 90 }}</p>
-        {{- with (index (.GetTerms "tags") 0) }}
-        <span class="hp-card-tag">{{ .LinkTitle }}</span>
+        {{- $tags := .GetTerms "tags" }}
+        {{- $total := len $tags }}
+        {{- if $tags }}
+        <div class="hp-card-tags">
+          {{- range first 4 $tags }}
+          <span class="hp-card-tag">{{ .LinkTitle }}</span>
+          {{- end }}
+          {{- if gt $total 4 }}
+          <span class="hp-card-tag hp-card-tag-more">+{{ sub $total 4 }}</span>
+          {{- end }}
+        </div>
         {{- end }}
       </div>
     </a>
