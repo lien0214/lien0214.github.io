@@ -10,6 +10,12 @@ tags:
 categories:
   - Career
 showToc: false
+cover:
+  image: /images/posts/easy-impact.jpg
+  alt: "Shopback app selection panel — merchant icons in a list"
+  relative: false
+  hidden: false
+  hiddenInSingle: false
 ---
 
 There was a feature I worked on at Shopback that I almost didn't think twice about.

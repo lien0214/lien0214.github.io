@@ -10,6 +10,12 @@ tags:
 categories:
   - Career
 showToc: false
+cover:
+  image: /images/posts/easy-impact.jpg
+  alt: "Shopback app 選擇面板 — 列表中的商家圖示"
+  relative: false
+  hidden: false
+  hiddenInSingle: false
 ---
 
 在 Shopback 有一個功能，我當時幾乎沒多想。

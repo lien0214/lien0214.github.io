@@ -305,12 +305,25 @@
     margin: 0 auto;
 }
 
-/* ── List page thumbnails: smaller cap ── */
+/* ── List page thumbnails: smaller cap + blur-reveal effect ── */
+.post-entry .entry-cover {
+    overflow: hidden;
+    position: relative;
+}
+
 .post-entry .entry-cover img {
     max-height: 220px;
     width: 100%;
     object-fit: cover;
     object-position: center;
+    filter: blur(6px);
+    transform: scale(1.06);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.post-entry:hover .entry-cover img {
+    filter: blur(0px);
+    transform: scale(1.0);
 }
 
 /* ── Post page: widen outer container on post pages so the 3-col grid fits ── */
@@ -1097,7 +1110,14 @@ body:has(.post-with-sidebar) .main {
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: transform 0.3s ease;
+    filter: blur(6px);
+    transform: scale(1.06);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.hp-card:hover .hp-card-thumb img {
+    filter: blur(0px);
+    transform: scale(1.0);
 }
 
 .hp-card:hover .hp-card-thumb img { transform: scale(1.04); }
