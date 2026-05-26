@@ -2,6 +2,7 @@
 title: "聯絡"
 url: /zh-tw/contact/
 summary: contact
+description: "聯絡連奕維 — 台大後端與 AI 工程師。歡迎研究合作、工作洽談或技術討論。"
 ShowToc: false
 ShowReadingTime: false
 hidemeta: true

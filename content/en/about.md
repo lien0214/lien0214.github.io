@@ -2,6 +2,7 @@
 title: "About"
 url: /en/about/
 summary: about
+description: "About Yi-Wei Lien — NTU CS MS student and Backend & AI Engineer. Research at MIRLab (quantitative trading on TWSE) and MSLab (LLM knowledge conflicts and memory). Former backend intern at Shopback and Cmoney."
 ---
 
 - **MS CS, National Taiwan University** (2025–2027).  

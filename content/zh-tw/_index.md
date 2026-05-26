@@ -1,5 +1,6 @@
 ---
 title: "連奕維 · Yi-Wei Lien"
+description: "連奕維 — 後端與 AI 工程師。台大資工碩士，MIRLab 台股量化交易研究與 MSLab LLM 知識衝突研究。"
 ---
 
 # 連奕維 · Yi-Wei Lien

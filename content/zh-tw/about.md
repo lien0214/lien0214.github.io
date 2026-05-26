@@ -1,7 +1,8 @@
 ---
-title: "About"
+title: "關於"
 url: /zh-tw/about/
 summary: about
+description: "關於連奕維 — 台大資工碩士生，後端與 AI 工程師。MIRLab 台股量化交易研究、MSLab LLM 知識衝突研究，曾於 Shopback 與 Cmoney 擔任後端實習工程師。"
 ---
 
 <img src="/images/avatar/Portraits.jpg" alt="連奕維" class="about-avatar">

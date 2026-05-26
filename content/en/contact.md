@@ -2,6 +2,7 @@
 title: "Contact"
 url: /en/contact/
 summary: contact
+description: "Contact Yi-Wei Lien — Backend & AI Engineer at NTU. Reach out for research collaboration, job conversations, or engineering discussions."
 ShowToc: false
 ShowReadingTime: false
 hidemeta: true

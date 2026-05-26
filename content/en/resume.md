@@ -2,6 +2,7 @@
 title: "Resume"
 url: /en/resume/
 summary: resume
+description: "Resume of Yi-Wei Lien — NTU CS MS, Backend & AI Engineer. Experience at Shopback and Cmoney. Research at MIRLab (quant trading) and MSLab (LLM knowledge conflicts). Targeting AI engineering roles in 2027."
 ShowToc: true
 TocOpen: true
 ShowReadingTime: false

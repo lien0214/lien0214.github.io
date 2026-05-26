@@ -2,6 +2,7 @@
 title: "履歷"
 url: /zh-tw/resume/
 summary: resume
+description: "連奕維的履歷 — 台大資工碩士，後端與 AI 工程師。Shopback、Cmoney 實習，MIRLab 量化交易與 MSLab LLM 知識衝突研究，預計 2027 年畢業，目標 AI 工程師職位。"
 ShowToc: true
 TocOpen: true
 ShowReadingTime: false

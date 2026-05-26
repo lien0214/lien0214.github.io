@@ -1,5 +1,6 @@
 ---
 title: "Yi-Wei Lien · 連奕維"
+description: "Yi-Wei Lien — Backend & AI Engineer. NTU CS MS student at MIRLab (quant trading on TWSE) and MSLab (LLM knowledge conflicts). Writing about AI research, backend systems, and quantitative finance."
 ---
 
 # Yi-Wei Lien · 連奕維
