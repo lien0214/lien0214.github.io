@@ -5,6 +5,7 @@
   if (!document.getElementById('cf-submit')) return;
   var SCRIPT_URL = '{{ $scriptURL }}';
   var CLIENT_ID  = '{{ $clientID }}';
+  console.log('[CF] script loaded. CLIENT_ID:', CLIENT_ID ? CLIENT_ID.slice(0,12) + '...' : '(empty)', '| SCRIPT_URL:', SCRIPT_URL ? 'set' : '(empty)');
 
   var form       = document.getElementById('cf-form');
   var submitBtn  = document.getElementById('cf-submit');
@@ -33,30 +34,40 @@
 
   function sendMessage(name, email, message) {
     var honeypot = document.getElementById('cf-website').value;
-    if (honeypot) { showSuccess(); return; }
+    if (honeypot) { console.log('[CF] honeypot triggered, skipping'); showSuccess(); return; }
 
+    console.log('[CF] sending to Apps Script... name:', name, '| email:', email);
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ name: name, email: email, message: message, website: '' })
-    }).then(showSuccess).catch(showError);
+    }).then(function () {
+      console.log('[CF] fetch resolved (no-cors, opaque) — showing success');
+      showSuccess();
+    }).catch(function (err) {
+      console.error('[CF] fetch error:', err);
+      showError();
+    });
   }
 
   function initGSI() {
+    console.log('[CF] GIS loaded, initialising token client');
     tokenClient = google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: 'email profile',
       callback: function (resp) {
-        if (resp.error) { showError(); return; }
+        if (resp.error) { console.error('[CF] OAuth error:', resp.error); showError(); return; }
+        console.log('[CF] OAuth token received, fetching userinfo');
         fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
           headers: { 'Authorization': 'Bearer ' + resp.access_token }
         })
         .then(function (r) { return r.json(); })
         .then(function (user) {
+          console.log('[CF] userinfo ok — name:', user.name, '| email:', user.email);
           sendMessage(user.name || '', user.email || '', form._pendingMsg);
         })
-        .catch(showError);
+        .catch(function (err) { console.error('[CF] userinfo fetch error:', err); showError(); });
       }
     });
   }
@@ -64,26 +75,31 @@
   submitBtn.addEventListener('click', function () {
     var message = document.getElementById('cf-message').value.trim();
     msgError.style.display = message ? 'none' : 'inline';
-    if (!message) return;
+    if (!message) { console.log('[CF] empty message, blocked'); return; }
 
-    if (!CLIENT_ID || !SCRIPT_URL) { showError(); return; }
+    if (!CLIENT_ID || !SCRIPT_URL) { console.error('[CF] missing CLIENT_ID or SCRIPT_URL'); showError(); return; }
 
+    console.log('[CF] button clicked, requesting OAuth token');
     setLoading(true);
     form._pendingMsg = message;
 
     if (tokenClient) {
       tokenClient.requestAccessToken({ prompt: 'select_account' });
     } else {
+      console.error('[CF] tokenClient not ready');
       showError();
     }
   });
 
   if (CLIENT_ID) {
+    console.log('[CF] loading GIS script');
     var s = document.createElement('script');
     s.src = 'https://accounts.google.com/gsi/client';
     s.onload = initGSI;
     s.async = true;
     document.head.appendChild(s);
+  } else {
+    console.warn('[CF] CLIENT_ID empty — GIS not loaded, button will show error');
   }
 })();
 </script>
