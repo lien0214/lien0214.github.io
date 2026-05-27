@@ -55,3 +55,121 @@ hidemeta: true
   </a>
 
 </div>
+
+---
+
+<div class="cf-section">
+  <h3 class="cf-heading">傳送訊息</h3>
+
+  <div id="cf-gsi-wrap">
+    <div id="g_id_onload"
+         data-client_id="{{ site.Params.googleClientID }}"
+         data-callback="cfGoogleSignIn"
+         data-auto_select="false"
+         data-itp_support="true">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="medium"
+         data-theme="outline"
+         data-text="signin_with"
+         data-shape="pill"
+         data-logo_alignment="left">
+    </div>
+    <p class="cf-gsi-hint">登入 Google 帳號可自動填入姓名與 Email，或直接在下方手動填寫。</p>
+  </div>
+
+  <form id="cf-form" class="cf-form" novalidate>
+    <div class="cf-row">
+      <div class="cf-field">
+        <label for="cf-name">姓名</label>
+        <input id="cf-name" name="name" type="text" placeholder="你的名字" autocomplete="name" required>
+      </div>
+      <div class="cf-field">
+        <label for="cf-email">Email</label>
+        <input id="cf-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+    </div>
+    <div class="cf-field">
+      <label for="cf-message">訊息</label>
+      <textarea id="cf-message" name="message" rows="5" placeholder="想說什麼？" required></textarea>
+    </div>
+    <button type="submit" id="cf-submit" class="cf-btn">
+      <span id="cf-btn-label">送出</span>
+      <span id="cf-btn-spinner" class="cf-spinner" style="display:none">⏳</span>
+    </button>
+  </form>
+
+  <div id="cf-success" class="cf-notice cf-notice-ok" style="display:none">
+    ✓ 訊息已送出，我會盡快回覆。
+  </div>
+  <div id="cf-error" class="cf-notice cf-notice-err" style="display:none">
+    發生錯誤，請直接寄信至 <a href="mailto:ted20030214@gmail.com">ted20030214@gmail.com</a>。
+  </div>
+</div>
+
+<script>
+(function () {
+  var SCRIPT_URL = '{{ site.Params.contactScriptURL }}';
+  var CLIENT_ID  = '{{ site.Params.googleClientID }}';
+
+  window.cfGoogleSignIn = function (response) {
+    try {
+      var payload = JSON.parse(atob(response.credential.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
+      var nameEl  = document.getElementById('cf-name');
+      var emailEl = document.getElementById('cf-email');
+      if (nameEl  && !nameEl.value)  nameEl.value  = payload.name  || '';
+      if (emailEl && !emailEl.value) emailEl.value = payload.email || '';
+      var wrap = document.getElementById('cf-gsi-wrap');
+      if (wrap) wrap.style.display = 'none';
+    } catch(e) {}
+  };
+
+  if (!CLIENT_ID) {
+    var wrap = document.getElementById('cf-gsi-wrap');
+    if (wrap) wrap.style.display = 'none';
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://accounts.google.com/gsi/client';
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  var form     = document.getElementById('cf-form');
+  var success  = document.getElementById('cf-success');
+  var error    = document.getElementById('cf-error');
+  var btnLabel   = document.getElementById('cf-btn-label');
+  var btnSpinner = document.getElementById('cf-btn-spinner');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!SCRIPT_URL) { error.style.display = 'block'; return; }
+
+    var name    = document.getElementById('cf-name').value.trim();
+    var email   = document.getElementById('cf-email').value.trim();
+    var message = document.getElementById('cf-message').value.trim();
+    if (!name || !email || !message) return;
+
+    btnLabel.style.display   = 'none';
+    btnSpinner.style.display = 'inline';
+    document.getElementById('cf-submit').disabled = true;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, message: message })
+    }).then(function () {
+      form.style.display    = 'none';
+      success.style.display = 'block';
+    }).catch(function () {
+      btnLabel.style.display   = 'inline';
+      btnSpinner.style.display = 'none';
+      document.getElementById('cf-submit').disabled = false;
+      error.style.display = 'block';
+    });
+  });
+})();
+</script>

@@ -98,6 +98,8 @@ outputs:
     - JSON
 
 params:
+  contactScriptURL: ""
+  googleClientID: ""
   author: Yi-Wei Lien
   avatar: /images/avatar/Portraits.jpg
   defaultTheme: auto
