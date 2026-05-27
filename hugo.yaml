@@ -98,8 +98,8 @@ outputs:
     - JSON
 
 params:
-  contactScriptURL: "https://script.google.com/macros/s/AKfycbxbYOaJOTzw6WB1Pw4UGxk3ckBYzArQxse1zGOCmCk0RrHP3O3aC0tAcLfYnBEzjeVg/exec"
-  googleClientID: "783210842454-fj4vqujg9lp7qi9r0vdp3u4vnk148sm0.apps.googleusercontent.com"
+  contactScriptURL: ""
+  googleClientID: ""
   author: Yi-Wei Lien
   avatar: /images/avatar/Portraits.jpg
   defaultTheme: auto

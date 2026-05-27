@@ -35,6 +35,8 @@ jobs:
         run: hugo --minify
         env:
           HUGO_PARAMS_GAID: ${{ secrets.GA_MEASUREMENT_ID }}
+          HUGO_PARAMS_CONTACTSCRIPTURL: ${{ secrets.CONTACT_SCRIPT_URL }}
+          HUGO_PARAMS_GOOGLECLIENTID: ${{ secrets.GOOGLE_CLIENT_ID }}
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v5
@@ -65,6 +67,8 @@ jobs:
         run: hugo --minify
         env:
           HUGO_PARAMS_GAID: ${{ secrets.GA_MEASUREMENT_ID }}
+          HUGO_PARAMS_CONTACTSCRIPTURL: ${{ secrets.CONTACT_SCRIPT_URL }}
+          HUGO_PARAMS_GOOGLECLIENTID: ${{ secrets.GOOGLE_CLIENT_ID }}
 
       - name: Serve built site on port 3000
         run: python3 -m http.server 3000 --directory ./public &
