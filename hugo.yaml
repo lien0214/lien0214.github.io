@@ -98,7 +98,7 @@ outputs:
     - JSON
 
 params:
-  contactScriptURL: "https://script.google.com/macros/s/AKfycbyIKjt5rcci7oUXVeL9cA6F_kxb9tpw6kdeBkN3rGLxHW7dLFAagGJPkmqvNj7uccES/exec"
+  contactScriptURL: "https://script.google.com/macros/s/AKfycbxbYOaJOTzw6WB1Pw4UGxk3ckBYzArQxse1zGOCmCk0RrHP3O3aC0tAcLfYnBEzjeVg/exec"
   googleClientID: ""
   author: Yi-Wei Lien
   avatar: /images/avatar/Portraits.jpg
