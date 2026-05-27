@@ -1426,6 +1426,12 @@ body:has(.post-with-sidebar) .main {
 }
 
 /* ── Contact form ── */
+.cf-honey {
+    position: absolute;
+    left: -9999px;
+    height: 0;
+    overflow: hidden;
+}
 .cf-section {
     margin-top: 2.4em;
 }

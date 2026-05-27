@@ -81,6 +81,9 @@ hidemeta: true
   </div>
 
   <form id="cf-form" class="cf-form" novalidate>
+    <div class="cf-honey" aria-hidden="true">
+      <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
     <div class="cf-row">
       <div class="cf-field">
         <label for="cf-name">Name</label>
@@ -152,10 +155,18 @@ hidemeta: true
     e.preventDefault();
     if (!SCRIPT_URL) { error.style.display = 'block'; return; }
 
-    var name    = document.getElementById('cf-name').value.trim();
-    var email   = document.getElementById('cf-email').value.trim();
-    var message = document.getElementById('cf-message').value.trim();
+    var name     = document.getElementById('cf-name').value.trim();
+    var email    = document.getElementById('cf-email').value.trim();
+    var message  = document.getElementById('cf-message').value.trim();
+    var honeypot = document.getElementById('cf-website').value;
     if (!name || !email || !message) return;
+
+    // Honeypot: bot filled the hidden field — fake success silently
+    if (honeypot) {
+      form.style.display    = 'none';
+      success.style.display = 'block';
+      return;
+    }
 
     btnLabel.style.display  = 'none';
     btnSpinner.style.display = 'inline';
@@ -165,7 +176,7 @@ hidemeta: true
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email, message: message })
+      body: JSON.stringify({ name: name, email: email, message: message, website: '' })
     }).then(function () {
       form.style.display    = 'none';
       success.style.display = 'block';
