@@ -11,6 +11,12 @@ tags:
 categories:
   - Engineering
 showToc: true
+cover:
+  image: /images/posts/monorepo.jpg
+  alt: "TypeScript monorepo 架構圖——微服務共享單一 repo"
+  relative: false
+  hidden: false
+  hiddenInSingle: false
 ---
 
 ## 背景

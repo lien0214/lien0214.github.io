@@ -11,6 +11,12 @@ tags:
 categories:
   - Engineering
 showToc: true
+cover:
+  image: /images/posts/monorepo.jpg
+  alt: "TypeScript monorepo architecture diagram — microservices sharing a single repo"
+  relative: false
+  hidden: false
+  hiddenInSingle: false
 ---
 
 ## The Context
