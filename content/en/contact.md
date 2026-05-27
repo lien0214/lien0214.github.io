@@ -65,6 +65,36 @@ hidemeta: true
     <div class="cf-honey" aria-hidden="true">
       <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
     </div>
+    <div class="cf-row">
+      <div class="cf-field cf-field-title">
+        <label for="cf-title">Title</label>
+        <select id="cf-title" name="title">
+          <option value="">—</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Dr.">Dr.</option>
+          <option value="Prof.">Prof.</option>
+        </select>
+      </div>
+      <div class="cf-field cf-field-grow">
+        <label for="cf-name">Name</label>
+        <input id="cf-name" name="name" type="text" placeholder="Your name (auto-filled after sign-in)">
+      </div>
+    </div>
+    <div class="cf-field">
+      <label for="cf-subject">Subject</label>
+      <select id="cf-subject" name="subject">
+        <option value="">— Select a topic —</option>
+        <option value="Job opportunity">Job opportunity</option>
+        <option value="Research collaboration">Research collaboration</option>
+        <option value="General inquiry">General inquiry</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="cf-field">
+      <label for="cf-org">Company / School <span class="cf-optional">(optional)</span></label>
+      <input id="cf-org" name="org" type="text" placeholder="Where are you from?">
+    </div>
     <div class="cf-field">
       <label for="cf-message">Message</label>
       <textarea id="cf-message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>

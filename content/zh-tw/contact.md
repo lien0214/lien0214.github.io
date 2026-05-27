@@ -65,6 +65,36 @@ hidemeta: true
     <div class="cf-honey" aria-hidden="true">
       <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
     </div>
+    <div class="cf-row">
+      <div class="cf-field cf-field-title">
+        <label for="cf-title">稱謂</label>
+        <select id="cf-title" name="title">
+          <option value="">—</option>
+          <option value="先生">先生</option>
+          <option value="女士">女士</option>
+          <option value="博士">博士</option>
+          <option value="教授">教授</option>
+        </select>
+      </div>
+      <div class="cf-field cf-field-grow">
+        <label for="cf-name">姓名</label>
+        <input id="cf-name" name="name" type="text" placeholder="您的姓名（登入後自動帶入）">
+      </div>
+    </div>
+    <div class="cf-field">
+      <label for="cf-subject">主旨</label>
+      <select id="cf-subject" name="subject">
+        <option value="">— 請選擇詢問類型 —</option>
+        <option value="工作機會">工作機會</option>
+        <option value="研究合作">研究合作</option>
+        <option value="一般詢問">一般詢問</option>
+        <option value="其他">其他</option>
+      </select>
+    </div>
+    <div class="cf-field">
+      <label for="cf-org">公司 / 學校 <span class="cf-optional">（選填）</span></label>
+      <input id="cf-org" name="org" type="text" placeholder="您來自哪裡？">
+    </div>
     <div class="cf-field">
       <label for="cf-message">訊息</label>
       <textarea id="cf-message" name="message" rows="5" placeholder="想說什麼？" required></textarea>

@@ -1468,13 +1468,17 @@ body:has(.post-with-sidebar) .main {
 }
 
 .cf-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 14px;
+    align-items: flex-end;
 }
 
-@media (max-width: 560px) {
-    .cf-row { grid-template-columns: 1fr; }
+.cf-field-title { flex: 0 0 96px; }
+.cf-field-grow  { flex: 1 1 auto; }
+
+@media (max-width: 480px) {
+    .cf-row { flex-direction: column; }
+    .cf-field-title { flex: none; width: 100%; }
 }
 
 .cf-field {
@@ -1490,7 +1494,13 @@ body:has(.post-with-sidebar) .main {
     letter-spacing: 0.04em;
 }
 
+.cf-optional {
+    font-weight: 400;
+    opacity: 0.6;
+}
+
 .cf-field input,
+.cf-field select,
 .cf-field textarea {
     background: var(--entry);
     border: 1px solid var(--border);
@@ -1504,7 +1514,17 @@ body:has(.post-with-sidebar) .main {
     resize: vertical;
 }
 
+.cf-field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
 .cf-field input:focus,
+.cf-field select:focus,
 .cf-field textarea:focus {
     border-color: var(--primary);
 }
