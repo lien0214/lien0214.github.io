@@ -1,8 +1,8 @@
-{{- if and .IsPage (or (eq .File.BaseFileName "contact") (eq .RelPermalink "/en/contact/") (eq .RelPermalink "/zh-tw/contact/")) }}
 {{- $scriptURL := site.Params.contactScriptURL }}
 {{- $clientID  := site.Params.googleClientID }}
 <script>
 (function () {
+  if (!document.getElementById('cf-submit')) return;
   var SCRIPT_URL = '{{ $scriptURL }}';
   var CLIENT_ID  = '{{ $clientID }}';
 
@@ -87,4 +87,3 @@
   }
 })();
 </script>
-{{- end }}
