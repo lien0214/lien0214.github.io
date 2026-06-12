@@ -73,8 +73,6 @@ TA for NTU's undergraduate DSA course. Ran weekly lab sessions, answered questio
 - Used **activation steering** to extract fine-tuned behavioral vectors and apply them to a frozen base model. Key finding: the behavioral direction is surprisingly transferable — the steering vector from a LoRA-trained model can push a base model's completions in the expected direction even without any weight updates.
 - The broader implication: fine-tuning injects directional bias into the residual stream in a way that's partially separable from task knowledge. This matters for alignment — if you can steer behavior without weights, you can also potentially *undo* fine-tuning signals.
 
-📄 *Paper under review, Neurips 2026.*
-
 ---
 
 ### Algorithm Trading — TWSE Daily Strategy *(Jan 2026 – Jun 2026)*

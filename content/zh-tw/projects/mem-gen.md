@@ -5,7 +5,7 @@ date: 2026-03-01
 period: "2026 年 3 月 – 6 月"
 team: "MSLab · 4 人團隊"
 category: "Research"
-status: "NeurIPS 2026 審閱中"
+status: "研究進行中"
 github: "https://github.com/ntumslab/mem_gen_following"
 stack: ["LLM", "LoRA", "PEFT", "Activation Steering", "Python"]
 ---
@@ -24,6 +24,4 @@ stack: ["LLM", "LoRA", "PEFT", "Activation Steering", "Python"]
 
 微調在**殘差流中注入了方向性偏置**，且這種偏置在某種程度上可以和任務知識分離。如果你可以不更新權重就控制行為，那你也有可能*撤銷*微調訊號。這對 Alignment 研究有直接意涵。
 
-## 狀態
 
-論文審閱中——NeurIPS 2026。

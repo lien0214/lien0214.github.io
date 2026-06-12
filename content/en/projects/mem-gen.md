@@ -5,7 +5,7 @@ date: 2026-03-01
 period: "Mar 2026 – Jun 2026"
 team: "MSLab · 4-person team"
 category: "Research"
-status: "NeurIPS 2026 under review"
+status: "Research in progress"
 github: "https://github.com/ntumslab/mem_gen_following"
 stack: ["LLM", "LoRA", "PEFT", "Activation Steering", "Python"]
 ---
@@ -24,6 +24,4 @@ When a language model has been fine-tuned to believe X, but its pretraining says
 
 Fine-tuning injects **directional bias into the residual stream** in a way that's partially separable from task knowledge. If you can steer behavior without weights, you can also potentially *undo* fine-tuning signals. This has direct implications for alignment work.
 
-## Status
 
-Paper under review — NeurIPS 2026.
