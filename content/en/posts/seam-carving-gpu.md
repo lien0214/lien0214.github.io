@@ -22,6 +22,10 @@ cover:
 > Full paper: [seam_carving.pdf](https://github.com/YuXiangLo/NTUPDP2026/blob/main/paper/seam_carving.pdf) · Code: [YuXiangLo/NTUPDP2026](https://github.com/YuXiangLo/NTUPDP2026)  
 > Joint work with Ya-Chen Wu and Yu-Hsiang Lo, NTU Parallel Programming, Spring 2026.
 
+**This project was awarded Top 10 in the NTU Parallel and Distributed Programming final project contest (out of 40 teams).** Our presentation is embedded below — we start at 38:30.
+
+<iframe width="100%" style="aspect-ratio:16/9" src="https://www.youtube.com/embed/1fGVECimgnw?start=2310" title="NTU PDP 2026 Final Project Showcase — Seam Carving GPU Study" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## The Starting Point
 
 Seam carving is a content-aware image resizing algorithm. Instead of cropping or scaling, it removes the *least important* pixel paths — seams — from the image, leaving the interesting parts intact. The results look surprisingly good.

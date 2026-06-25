@@ -22,6 +22,10 @@ cover:
 > 完整論文：[seam_carving.pdf](https://github.com/YuXiangLo/NTUPDP2026/blob/main/paper/seam_carving.pdf) · 程式碼：[YuXiangLo/NTUPDP2026](https://github.com/YuXiangLo/NTUPDP2026)  
 > 與吳雅蓁、羅宇翔合作，台大平行程式設計，Spring 2026。
 
+**本專案獲得台大平行與分散式程式設計期末競賽 Top 10（共 40 組）。** 發表影片嵌入如下，我們的上台時間從 38:30 開始。
+
+<iframe width="100%" style="aspect-ratio:16/9" src="https://www.youtube.com/embed/1fGVECimgnw?start=2310" title="NTU PDP 2026 Final Project Showcase — Seam Carving GPU Study" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 起點
 
 Seam carving 是一種 content-aware 的圖像縮放演算法。它不是裁切或縮放，而是移除圖片中「最不重要」的像素路徑——seam——同時保留視覺上重要的區域。效果出乎意料地好。
