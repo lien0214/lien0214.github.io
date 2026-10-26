@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>連奕維 — 面試自我介紹</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+  html, body { margin: 0; height: 100%; background: #140C10; overflow: hidden; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #deck { width: 1920px; height: 1080px; position: relative; flex: none; transform-origin: center center; }
+  .slide { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; box-sizing: border-box; overflow: hidden; }
+  .slide:not(.active) { display: none !important; }
+  .slide *, .slide *::before, .slide *::after { box-sizing: border-box; margin: 0; }
+  .slide p { font-size: 32px; line-height: 1.4; }
+  .slide h1 { font-size: 96px; line-height: 1.1; font-weight: 600; }
+  .slide h2 { font-size: 64px; line-height: 1.15; font-weight: 600; }
+  .slide h3 { font-size: 44px; line-height: 1.2; font-weight: 600; }
+  .slide ul { padding: 0 0 0 1.1em; }
+  .slide img, .slide svg { display: block; flex: none; }
+  .slide aside { display: none; }
+  .logo-slot { overflow: hidden; }
+  .logo-slot img { display: none; width: 100%; height: 100%; object-fit: contain; }
+  .logo-slot.has-logo { border-color: transparent !important; }
+  .logo-slot.has-logo img { display: block; }
+  .logo-slot.has-logo p { display: none; }
+
+  #bar { position: fixed; right: 16px; bottom: 16px; display: flex; gap: 6px; align-items: center;
+         font: 13px/1 ui-monospace, Menlo, monospace; color: #E9DDE1; background: rgba(42, 26, 33, .85);
+         border-radius: 999px; padding: 6px 8px; transition: opacity .3s; z-index: 10; }
+  #bar.idle { opacity: 0; }
+  #bar button, #bar a { all: unset; cursor: pointer; padding: 6px 10px; border-radius: 999px; color: inherit; }
+  #bar button:hover, #bar a:hover { background: rgba(255, 255, 255, .12); }
+  #bar button:focus-visible, #bar a:focus-visible { outline: 2px solid #E7B9A6; }
+  #count { min-width: 52px; text-align: center; }
+  #notes { position: fixed; left: 16px; right: 16px; bottom: 64px; max-height: 32vh; overflow: auto; display: none;
+           background: rgba(20, 12, 16, .94); color: #F3ECEF; border: 1px solid #563444; border-radius: 12px;
+           padding: 16px 20px; font: 16px/1.6 'IBM Plex Sans', 'Noto Sans TC', system-ui, sans-serif; z-index: 10; }
+  #notes.open { display: block; }
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- ===== Slide 01 · cover ===== -->
+<section class="slide" id="cover" data-transition="fade" style="background:#2A1A21;color:#CDB7BF;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px;display:grid;grid-template-columns:1fr 560px;gap:96px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#E7B9A6">面試 · 自我介紹</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h1 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05;color:#FAF6F3">連奕維</h1>
+<p style="font-size:44px;color:#E7B9A6">Yi-Wei Lien</p>
+</div>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:500;color:#FAF6F3">後端與系統工程師</p>
+<p style="font-size:32px;color:#CDB7BF">國立台灣大學 資訊工程學系 碩士 · MIRLab</p>
+<div style="display:flex;gap:24px">
+<div class="logo-slot" style="width:320px;height:160px;border:2px dashed #7A5F6A;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/ntu" alt="NTU logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#CDB7BF">NTU logo</p></div>
+<div class="logo-slot" style="width:320px;height:160px;border:2px dashed #7A5F6A;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/mirlab" alt="MIRLab logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#CDB7BF">MIRLab logo</p></div>
+</div>
+</div>
+<img src="/images/avatar/Portraits.jpg" alt="Portrait of Yi-Wei Lien" style="width:560px;height:560px;object-fit:cover;border-radius:50%;border:6px solid #563444">
+<aside>您好，謝謝您今天的時間。我是連奕維，目前是台大資工碩二，在 MIRLab。我把自己定位成後端與系統工程師：我喜歡打造在正式環境站得住的服務，也喜歡把效能一路追到硬體層。接下來幾分鐘，我會介紹我的經歷、深入講兩個專案，最後說明我在找的方向。</aside>
+</section>
+
+<!-- ===== Slide 02 · about ===== -->
+<section class="slide" id="about" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">01 · 關於我</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">在大學各個階段，我都盡力深度探索自我與職涯</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">學歷</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">台大資工</h3>
+<p style="font-size:32px;line-height:1.4">碩士，MIRLab<br>2025 – 2027</p>
+<p style="font-size:32px;line-height:1.4">學士，已畢業<br>2021 – 2025</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">業界</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">3 段實習</h3>
+<p style="font-size:32px;line-height:1.4">Shopback 軟體工程</p>
+<p style="font-size:32px;line-height:1.4">Cmoney 後端</p>
+<p style="font-size:32px;line-height:1.4">Cmoney AI/ML（現在）</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">研究</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">中央研究院</h3>
+<p style="font-size:32px;line-height:1.4">資創中心與資訊所研究實習</p>
+<p style="font-size:32px;line-height:1.4">論文 AAMAS 2027 審稿中</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">02</p>
+</div>
+<aside>先簡單總結。在大學的各個階段，我都盡力深入探索自己和職涯方向。學歷方面，我大學和碩士都在台大資工，現在在 MIRLab。業界方面有三段實習：Shopback 的軟體工程、Cmoney 的後端，以及現在 Cmoney 的 AI/ML。研究方面，我在中研院有兩段研究實習，最近一段的成果已經寫成論文，目前在 AAMAS 2027 審稿中。</aside>
+</section>
+
+<!-- ===== Slide 03 · timeline ===== -->
+<section class="slide" id="timeline" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">01 · 關於我</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">工作經歷</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/citi" alt="CITI logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">CITI logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2023.09 – 2024.06</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">研究實習生（大學部）</h3>
+<p style="font-size:24px;line-height:1.4">中研院資創中心</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/cmoney" alt="Cmoney logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">Cmoney logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2024.07 – 2025.04</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">後端開發工程師實習生</h3>
+<p style="font-size:24px;line-height:1.4">Cmoney</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/shopback" alt="Shopback logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">Shopback logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2025.05 – 2025.11</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">軟體開發工程師實習生</h3>
+<p style="font-size:24px;line-height:1.4">Shopback</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/iis" alt="IIS logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">IIS logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2026.06 – 2026.08</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">研究實習生</h3>
+<p style="font-size:24px;line-height:1.4">中研院資訊所</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #563444;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/cmoney" alt="Cmoney logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">Cmoney logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2026.09 – 現在</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">AI/ML 工程師實習生</h3>
+<p style="font-size:24px;line-height:1.4">Cmoney · 目前</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">03</p>
+</div>
+<aside>這是我的時間軸。一開始在中研院資創中心做研究實習，建立資料集生成系統。接著第一份業界實習是在 Cmoney 做後端，之後到 Shopback。今年暑假在中研院資訊所做研究實習，九月起回到 Cmoney。接下來我用倒敘的方式，先從 Shopback 開始介紹兩段後端經驗。</aside>
+</section>
+
+<!-- ===== Slide 04 · shopback ===== -->
+<section class="slide" id="shopback" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · 工作經驗 · Shopback</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">軟體開發工程師實習生</h2>
+<p style="font-size:32px">2025.05 – 2025.11 · 台北 · 混合辦公</p>
+</div>
+<div class="logo-slot" style="width:360px;height:200px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/shopback" alt="Shopback logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">Shopback logo</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">工作環境</h3>
+<p style="font-size:32px;line-height:1.45">現金回饋平台的核心後端團隊，在 TypeScript monorepo 架構下開發。</p>
+<p style="font-size:32px;line-height:1.45">真正 Production 環境的訓練。</p>
+<p style="font-size:32px;line-height:1.45">負責過的服務：客服、追蹤清單、推播通知、旅遊。</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">TypeScript</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">Kubernetes</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">Monorepo</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">SQL</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">CI</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#2A1A21;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:700;color:#E7B9A6;line-height:1.1">~100 → &lt;10 ms</p>
+<p style="font-size:32px;color:#E9DDE1">消除 10+ 個 API 的 RPC 開銷</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:700;color:#563444;line-height:1.1">−10–15%</p>
+<p style="font-size:32px">5+ 個關鍵 API 的錯誤率下降</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">04</p>
+</div>
+<aside>在 Shopback，我是核心後端團隊的軟體開發工程師實習生。Shopback 是現金回饋平台，後端是跑在 Kubernetes 上的 TypeScript monorepo，這段經驗讓我在真正的 Production 環境中得到訓練。我參與過客服、追蹤清單、推播通知和旅遊相關的服務。兩個主要成果：消除了 10 個以上 API 的 RPC 開銷，延遲從約 100 毫秒降到 10 毫秒以下；以及強化 5 個關鍵 API 的可靠性，錯誤率降低 10 到 15%。先講我在可靠性上學到的事，再深入講延遲的部分。</aside>
+</section>
+
+<!-- ===== Slide 05 · shopback-reliability ===== -->
+<section class="slide" id="shopback-reliability" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · 工作經驗 · Shopback</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">經驗：把雜訊和真正的錯誤分開</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">01 · 雜訊</p>
+<div class="logo-slot" style="width:96px;height:96px;border:2px dashed #C9B4BA;border-radius:16px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/datadog" alt="Datadog logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">DD</p></div>
+</div>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#2A1A21">已知的良性告警</h3>
+<p style="font-size:32px;line-height:1.45">降低告警等級，並重構相關的錯誤處理流程。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">02 · 真正的錯誤</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#2A1A21">第三方 API</h3>
+<p style="font-size:32px;line-height:1.45">追查外部 API 的不確定回應，並更新處理邏輯。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#2A1A21;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#E7B9A6">03 · 成果</p>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1;color:#E7B9A6">−10–15%</p>
+<p style="font-size:32px;line-height:1.45;color:#E9DDE1">5+ 個關鍵 API 的錯誤率下降</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">05</p>
+</div>
+<aside>可靠性這件事給我的經驗是：很多看起來像錯誤的東西，其實是已知的良性情況。所以我先把雜訊和真正的錯誤分開。雜訊的部分，我降低告警等級，並重構錯誤處理流程，讓這些情況被明確處理。真正的錯誤中，有幾個來自第三方 API 的不確定行為，我追查這些情況並更新處理邏輯。最後 5 個關鍵 API 的錯誤率降低了 10 到 15%，剩下的告警也變得真正值得注意。</aside>
+</section>
+
+<!-- ===== Slide 06 · mono-context ===== -->
+<section class="slide" id="mono-context" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">深入案例 · Shopback</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Monorepo 遷移</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 760px;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">為什麼要遷移</h3>
+<p style="font-size:32px;line-height:1.45">每個微服務都佔用一個容器，閒置的服務仍佔著分配到的資源。</p>
+<p style="font-size:32px;line-height:1.45">把服務搬進 TypeScript monorepo，就能共用同一個 process 和資源池。</p>
+<p style="font-size:32px;line-height:1.45">對團隊來說在某種層面上也更好維護。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">任務</h3>
+<p style="font-size:32px;line-height:1.45">凡是在 monorepo 內呼叫不同服務，皆改成函式呼叫。</p>
+</div>
+</div>
+<img src="/images/posts/monorepo.jpg" alt="TypeScript monorepo architecture: microservices sharing a single repository" style="width:760px;height:560px;object-fit:cover;border-radius:20px">
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">06</p>
+</div>
+<aside>這是我實習中最困難的任務。Shopback 有很多微服務，每個都佔用一個容器，閒置的服務仍然佔著分配到的資源。把服務搬進 TypeScript monorepo，就能共用同一個 process 和資源池，某種程度上對團隊來說也更好維護。我的任務很具體：monorepo 內不同服務之間的呼叫，全部改成直接的函式呼叫。聽起來只是重構，實際上沒那麼簡單。</aside>
+</section>
+
+<!-- ===== Slide 07 · mono-approach ===== -->
+<section class="slide" id="mono-approach" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">深入案例 · Shopback</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">從網路呼叫到函式呼叫</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 600px;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">之前 · 各自獨立的容器</p>
+<div style="display:flex;align-items:center;gap:24px">
+<div style="width:240px;background:#FFFFFF;border:2px solid #C9B4BA;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;color:#2A1A21;text-align:center">Service A</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">透過網路呼叫 API</p>
+<svg width="220" height="56" viewBox="0 0 220 56" aria-hidden="true"><polygon points="0,14.0 132.0,14.0 132.0,0 220.0,28.0 132.0,56.0 132.0,42.0 0,42.0" fill="#C9B4BA"/></svg>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">~100 ms</p>
+</div>
+<div style="width:240px;background:#FFFFFF;border:2px solid #C9B4BA;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;color:#2A1A21;text-align:center">Service B</p>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">之後 · 同一個 monorepo process</p>
+<div style="display:flex;align-items:center;gap:24px;background:#2A1A21;border-radius:20px;padding:28px">
+<div style="width:212px;background:#3D2731;border:2px solid #7A5F6A;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;color:#FAF6F3;text-align:center">Service A</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#E7B9A6">直接函式呼叫</p>
+<svg width="220" height="56" viewBox="0 0 220 56" aria-hidden="true"><polygon points="0,14.0 132.0,14.0 132.0,0 220.0,28.0 132.0,56.0 132.0,42.0 0,42.0" fill="#E7B9A6"/></svg>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#E7B9A6">&lt;10 ms</p>
+</div>
+<div style="width:212px;background:#3D2731;border:2px solid #7A5F6A;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;color:#FAF6F3;text-align:center">Service B</p>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">困難在哪裡</h3>
+<ul style="font-size:28px;line-height:1.45;display:flex;flex-direction:column;gap:16px">
+<li>架構原本為共用函式庫設計，<br/>不是為了執行服務</li>
+<li>多種框架和相依性解析互相衝突</li>
+<li>版本衝突，而且沒有清楚的 stack trace</li>
+<li>團隊沒有前例，mentor 也沒做過</li>
+</ul>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">07</p>
+</div>
+<aside>之前，服務 A 透過網路呼叫服務 B，每次大約 100 毫秒。遷移之後，兩者在同一個 monorepo process 裡，A 直接呼叫 B 的函式。困難有幾個：這個 monorepo 原本是為共用函式庫設計的，不是為了執行有自己啟動流程的後端服務；我們用了好幾種後端框架，它們和 monorepo 的相依性解析互相衝突；還有 workspace 層級的版本衝突，只在執行時出現，也沒有明顯的 stack trace。而且我身邊的團隊，包括 mentor，都沒有人做過。</aside>
+</section>
+
+<!-- ===== Slide 08 · mono-result ===== -->
+<section class="slide" id="mono-result" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">深入案例 · Shopback</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">成果，以及我怎麼突破卡關</h2>
+</div>
+<div style="display:grid;grid-template-columns:720px 1fr;gap:64px;align-items:stretch">
+<div style="display:flex;flex-direction:column;justify-content:center;gap:16px;background:#2A1A21;border-radius:24px;padding:56px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#E7B9A6">每次呼叫的延遲</p>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1;color:#FAF6F3">~100 ms</p>
+<svg width="56" height="72" viewBox="0 0 56 72" aria-hidden="true"><polygon points="14.0,0 42.0,0 42.0,43.199999999999996 56.0,43.199999999999996 28.0,72.0 0,43.199999999999996 14.0,43.199999999999996" fill="#E7B9A6"/></svg>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1;color:#E7B9A6">&lt;10 ms</p>
+<p style="font-size:32px;color:#E9DDE1">涵蓋 10+ 個 API</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;gap:24px;align-items:start">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px;white-space:nowrap">Sprint 1–3</p>
+<p style="font-size:32px;line-height:1.45">進展緩慢：看得到解法，卻跑不起來。</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px;white-space:nowrap">轉折點</p>
+<p style="font-size:32px;line-height:1.45">私訊另一個團隊做過類似問題的資深工程師。</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px;white-space:nowrap">下一個 Sprint</p>
+<p style="font-size:32px;line-height:1.45">一切豁然開朗，遷移順利上線。</p>
+</div>
+<div style="flex:1"></div>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:500;line-height:1.25;color:#2A1A21;border-left:6px solid #563444;padding:0 0 0 28px">即使是陌生人，也應該主動聯絡求助。</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">08</p>
+</div>
+<aside>成果是：因為少了網路這一跳，10 個以上 API 的跨服務呼叫從約 100 毫秒降到 10 毫秒以下。但我學到最多的，是怎麼突破卡關。前兩三個 sprint 進展很慢，我看得出解法的輪廓，卻一直跑不起來。後來我主動私訊另一個團隊、處理過類似問題的資深工程師，他帶我看了他的做法，我在下一個 sprint 就完成了遷移。我的心得是：遇到困難時，即使對方是陌生人，也應該主動聯絡求助。</aside>
+</section>
+
+<!-- ===== Slide 09 · cmoney ===== -->
+<section class="slide" id="cmoney" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · 工作經驗 · Cmoney</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">後端開發工程師實習生</h2>
+<p style="font-size:32px">2024.07 – 2025.04 · 新北市 · 混合辦公</p>
+</div>
+<div class="logo-slot" style="width:360px;height:200px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/cmoney" alt="Cmoney logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">Cmoney logo</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">微服務重構</h3>
+<ul style="font-size:32px;line-height:1.45;display:flex;flex-direction:column;gap:12px">
+<li>從單體架構中抽出共用的商業邏輯</li>
+<li>定義清楚的服務介面</li>
+<li>資料存取從直接查 DB 改成有版本的服務契約</li>
+</ul>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">C#</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">ASP.NET</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">MongoDB</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">OOP</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">高併發</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#2A1A21;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:700;color:#E7B9A6;line-height:1.1">9 個 API</p>
+<p style="font-size:32px;color:#E9DDE1">重構為微服務</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:700;color:#563444;line-height:1.1">7M+</p>
+<p style="font-size:32px">旗艦 App 下載量</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">09</p>
+</div>
+<aside>在 Shopback 之前，我的第一份業界實習是在 Cmoney，台灣主要的金融資訊平台之一，旗艦 App 有超過 700 萬次下載。我在核心後端進行微服務重構時加入，重構了 9 個後端 API。具體來說，是從單體架構中抽出共用的商業邏輯、定義清楚的服務介面，並把資料存取從直接查資料庫改成有版本的服務契約。技術棧是 C#、ASP.NET 和 MongoDB。</aside>
+</section>
+
+<!-- ===== Slide 10 · cmoney-lessons ===== -->
+<section class="slide" id="cmoney-lessons" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · 工作經驗 · Cmoney</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">重構過程中教會我的事</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">高併發</h3>
+<p style="font-size:32px;line-height:1.45">開盤時數百萬使用者同時讀取金融資料，會暴露出測試全綠時看不到的邊界情況。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">設計的價值會在之後顯現</h3>
+<p style="font-size:32px;line-height:1.45">我是從接手沒有好好設計的程式碼、再把它修好的過程中，學會 OOP 架構的。</p>
+</div>
+</div>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:500;line-height:1.3;color:#2A1A21;border-left:6px solid #563444;padding:0 0 0 32px">「重構別人的正式環境系統，是我上過最好的軟體架構課。」</p>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">10</p>
+</div>
+<aside>Cmoney 的重構過程給了我兩個深刻的體會。第一是高併發：開盤時數百萬使用者同時打開 App，會遇到測試全綠時根本看不到的邊界情況。第二，設計的價值會在之後顯現。我不是從課本學會物件導向架構，而是從接手沒有好好設計的程式碼、再把它重構好的過程中學到的。所以我會說，重構別人的正式環境系統，是我上過最好的軟體架構課。</aside>
+</section>
+
+<!-- ===== Slide 11 · seam ===== -->
+<section class="slide" id="seam" data-transition="fade" style="background:#F1E8E3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">專案 · 系統</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Seam carving × V100</h2>
+</div>
+<div style="display:grid;grid-template-columns:1000px 1fr;gap:64px;align-items:start">
+<img src="/images/posts/seam-carving.png" alt="Seam carving：原始圖片、以紅色標出的能量最低 seam，以及內容感知縮放後的結果" style="width:1000px;height:426px;object-fit:contain;background:#FAF6F3;border-radius:20px">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">這是什麼</p>
+<p style="font-size:32px;line-height:1.45;color:#2A1A21">一個工程任務，而不是研究：以 profiling 為依據，讓既有的圖片縮放演算法在 GPU 上跑得更快。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">使用的工具</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">CUDA</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">C++</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">OpenMP</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">Nsight Compute</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">NVIDIA V100</p>
+</div>
+</div>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:28px;font-weight:600;color:#FAF6F3;background:#563444;padding:14px 22px;border-radius:12px">台大平行程式設計 · 40 組中的 Top 10</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">11</p>
+</div>
+<aside>再簡單介紹一個專案。在平行程式設計課上，我們團隊把 seam carving 這個內容感知的圖片縮放演算法，放到 NVIDIA V100 上做優化。我想強調這是一個工程任務，而不是研究：拿一個既有的演算法，讓它跑得更快。我用 C++ 寫 CUDA kernel，跟調校過的 OpenMP CPU 版本做比較，並用 Nsight Compute 決定每一步要優化什麼。這個專案在 40 組中進入前 10 名，如果有興趣，我很樂意深入說明細節。</aside>
+</section>
+
+<!-- ===== Slide 12 · drps ===== -->
+<section class="slide" id="drps" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">03 · 研究 · 中研院資訊所</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">多智能體強化學習中的個別智能體旋轉</h2>
+<p style="font-size:32px">2026.07 – 2026.10 · 論文 AAMAS 2027 審稿中</p>
+</div>
+<div class="logo-slot" style="width:360px;height:200px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/iis" alt="IIS logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">IIS logo</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">核心想法</h3>
+<p style="font-size:32px;line-height:1.45">共用同一個網路的智能體容易行為趨同，但團隊需要不同的角色。</p>
+<p style="font-size:32px;line-height:1.45">既有方法讓每個智能體<b>縮放</b>共享特徵；我讓每個智能體也能<b>旋轉</b>它們，參數只多 6.7%。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:24px;align-items:center;background:#F1E8E3;border-radius:16px;padding:28px 32px">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:700;color:#563444;white-space:nowrap">7 / 8</p>
+<p style="font-size:28px;line-height:1.4">張 SMAC 地圖最終達到或超過基準，多數學得更快</p>
+</div>
+<div style="display:flex;gap:24px;align-items:center;background:#F1E8E3;border-radius:16px;padding:28px 32px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+<p style="font-size:28px;line-height:1.4">對照實驗證明提升不只是來自多出來的參數</p>
+</div>
+<div style="display:flex;gap:24px;align-items:center;background:#F1E8E3;border-radius:16px;padding:28px 32px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+<p style="font-size:28px;line-height:1.4">也如實報告表現較差的情況：隨機隊伍組成</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">12</p>
+</div>
+<aside>簡單講一下研究。今年暑假我在中研院資訊所做研究實習，成果寫成論文，目前在 AAMAS 2027 審稿中。問題是：多智能體強化學習通常讓所有智能體共用一個網路，這會讓它們行為趨同，即使團隊需要不同的角色。既有方法讓每個智能體縮放共享特徵；我加入了個別智能體的旋轉，讓它們也能用不同方向看待特徵，參數只多 6.7%。在 8 張 StarCraft 測試地圖上，多數地圖學得更快，其中 7 張最終達到或超過基準。我也做了對照實驗，證明提升不只是因為參數變多，並如實報告表現較差的情境。我提研究不是因為要轉向 ML，而是因為它和 GPU 專案是同一種習慣：嚴謹的實驗和誠實的結果。</aside>
+</section>
+
+<!-- ===== Slide 13 · research ===== -->
+<section class="slide" id="research" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">03 · 研究</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">我能快速上手陌生的領域</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:36px">
+<div style="height:160px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#FAF6F3">
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:700;color:#563444">NTU AIS Lab</p>
+</div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2026.03 – 2026.07</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">基於圖論的 RAG 防禦</h3>
+<p style="font-size:28px;line-height:1.45">共同第一作者。免訓練的黑箱方法，防禦 RAG 投毒攻擊。</p>
+<p style="font-size:24px;color:#563444">審稿中 · ACL ARR 2026 年 10 月</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:36px">
+<div class="logo-slot" style="height:160px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/esun" alt="E.SUN logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">E.SUN logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2026.06 – 現在</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">以 RL 做投資組合管理</h3>
+<p style="font-size:28px;line-height:1.45">MIRLab 與玉山金控的產學合作計畫。</p>
+<p style="font-size:24px;color:#563444">進行中</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:36px">
+<div class="logo-slot" style="height:160px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/mirlab" alt="MIRLab logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">MIRLab logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2026.01 – 2026.05</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">台股量化交易</h3>
+<p style="font-size:28px;line-height:1.45">日頻策略，並透過券商 API 自動下單。</p>
+<p style="font-size:24px;color:#563444">3 人團隊</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">13</p>
+</div>
+<aside>再快速帶過三個研究專案，主要是展現廣度。和 AIS Lab 合作時，我是共同第一作者，提出免訓練、黑箱的方法來防禦 RAG 投毒攻擊，目前在 ACL Rolling Review 審稿中。在 MIRLab，我現在參與和玉山金控合作的強化學習投資組合管理計畫。今年稍早，MIRLab 三人團隊也做了台股的日頻交易策略，並透過券商 API 自動下單。每次領域都不同，不變的是我能很快在陌生的 codebase 和問題上進入狀況。</aside>
+</section>
+
+<!-- ===== Slide 14 · leadership ===== -->
+<section class="slide" id="leadership" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">04 · 程式之外</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">帶領團隊，以及教學</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 600px;gap:48px;align-items:start">
+<div style="display:grid;grid-template-columns:480px 1fr;gap:36px;align-items:start">
+<img src="/images/projects/bubblo-cover.png" alt="Bubblo title screen: a pixel-art 2D platformer" style="width:480px;height:268px;object-fit:cover;border-radius:16px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">專案負責人 · 2025</p>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Bubblo</h3>
+<p style="font-size:28px;line-height:1.45">Unity 2D 平台遊戲，6 人、3 個月、600+ commits</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;grid-column:span 2">
+<p style="font-size:28px;line-height:1.45"><b>架構先行：</b>在寫任何遊戲程式碼前就選定 Observer、State Machine 和 Command 模式，讓六個人不會互相踩到。</p>
+<p style="font-size:28px;line-height:1.45"><b>輕量流程：</b>共用的任務看板、非同步回報，以及每週一次只為了解除阻礙的同步會議。</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<div class="logo-slot" style="height:160px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/ntu-csie" alt="NTU CSIE logo"><p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">NTU CSIE logo</p></div>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">助教</h3>
+<div style="display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;color:#2A1A21">金融科技導論</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2026.09 – 2027.02</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;color:#2A1A21">資料結構與演算法</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#563444">2023.02 – 2023.06</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#7A6470">14</p>
+</div>
+<aside>工程之外：我帶領過 Bubblo，一款六個人、三個月、600 多個 commit 的 2D 平台遊戲。在任何人寫遊戲程式碼之前，我先用 Observer、State Machine 和 Command 模式設計好元件架構，因為六個人在同一個 codebase，隱性耦合會拖垮速度。流程方面，我發現繁重的敏捷儀式不適合學生團隊，所以精簡成任務看板、非同步回報，和每週一次只為了解除阻礙的同步會議。我也當過兩次助教：資料結構與演算法，以及這學期的金融科技導論。教學讓我體會到，把東西講清楚比自己懂還難。</aside>
+</section>
+
+<!-- ===== Slide 15 · looking-for ===== -->
+<section class="slide" id="looking-for" data-transition="fade" style="background:#2A1A21;color:#CDB7BF;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#E7B9A6">05 · 接下來</p>
+<h2 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.15;color:#FAF6F3">軟體、韌體、系統與嵌入式研發職位</h2>
+<p style="font-size:32px;line-height:1.45;color:#E9DDE1">以研發替代役的形式，2027 年畢業後到職。</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#3D2731;border-radius:20px;padding:40px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E7B9A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#FAF6F3">我能把東西上線</h3>
+<p style="font-size:28px;line-height:1.45">在 Shopback 和 Cmoney 的正式系統上做過重構與遷移。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#3D2731;border-radius:20px;padding:40px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E7B9A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#FAF6F3">先量測，再優化</h3>
+<p style="font-size:28px;line-height:1.45">由 profiler、延遲和記憶體頻寬決定我要改什麼。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#3D2731;border-radius:20px;padding:40px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E7B9A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<h3 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#FAF6F3">我上手很快</h3>
+<p style="font-size:28px;line-height:1.45">新的 codebase、語言和領域，從 C# 到 CUDA。</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#A88F99">連奕維 · 後端與系統工程師</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#A88F99">15</p>
+</div>
+<aside>那我在找什麼？我在找軟體、韌體、系統與嵌入式的研發職位，以研發替代役的形式，2027 年畢業後到職。我發現自己最適合當一個開發型的工程師：動手打造、讓它運作、再讓它更好。我能帶來三件事：第一，我能把東西上線，在 Shopback 和 Cmoney 的正式系統上做過重構與遷移。第二，我先量測再優化，由 profiler、延遲數字和記憶體頻寬決定要改什麼，就像 GPU 專案那樣。第三，我上手很快，不論是新的 codebase、新語言或新領域。</aside>
+</section>
+
+<!-- ===== Slide 16 · thanks ===== -->
+<section class="slide" id="thanks" data-transition="fade" style="background:#2A1A21;color:#CDB7BF;font-family:'IBM Plex Sans', 'Noto Sans TC', Arial, sans-serif;padding:128px;display:grid;grid-template-columns:1fr 400px;gap:96px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h1 style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05;color:#FAF6F3">謝謝聆聽</h1>
+<p style="font-family:'Space Grotesk', 'Noto Sans TC', Arial, sans-serif;font-size:44px;font-weight:500;color:#E7B9A6">歡迎針對任何部分深入提問。</p>
+</div>
+<div style="display:grid;grid-template-columns:200px 1fr;gap:20px 32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#A88F99">信箱</p>
+<p style="font-size:32px;color:#FAF6F3">ted20030214@gmail.com</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#A88F99">網站</p>
+<p style="font-size:32px;color:#FAF6F3">lien0214.github.io</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#A88F99">GITHUB</p>
+<p style="font-size:32px;color:#FAF6F3">github.com/lien0214</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', 'Noto Sans TC', monospace;font-size:24px;color:#A88F99">LINKEDIN</p>
+<p style="font-size:32px;color:#FAF6F3">linkedin.com/in/yi-wei-lien</p>
+</div>
+</div>
+<img src="/images/avatar/Portraits.jpg" alt="Portrait of Yi-Wei Lien" style="width:400px;height:400px;object-fit:cover;border-radius:50%;border:6px solid #563444">
+<aside>以上就是我的簡單介紹：一個能把東西上線、先量測再優化、而且上手很快的後端與系統工程師。謝謝您的時間，歡迎針對任何專案深入提問。</aside>
+</section>
+</div></div>
+<div id="notes" aria-live="polite"></div>
+<nav id="bar" aria-label="Slide controls">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <span id="count"></span>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="toggle-notes" aria-label="Toggle speaker notes" title="Speaker notes (N)">Notes</button>
+  <button id="fs" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
+  <a href="/en/self-intro/">EN</a>
+</nav>
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var deck = document.getElementById('deck');
+  var count = document.getElementById('count');
+  var notes = document.getElementById('notes');
+  var bar = document.getElementById('bar');
+  var cur = 0;
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  function show(i) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (el, k) { el.classList.toggle('active', k === cur); });
+    count.textContent = (cur + 1) + ' / ' + slides.length;
+    var aside = slides[cur].querySelector('aside');
+    notes.textContent = aside ? aside.textContent.trim() : '';
+    if (location.hash !== '#' + (cur + 1)) history.replaceState(null, '', '#' + (cur + 1));
+  }
+  function fromHash() {
+    var n = parseInt(location.hash.slice(1), 10);
+    return isNaN(n) ? 0 : n - 1;
+  }
+  function fullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+  }
+
+  // Logos: try png, svg, webp, jpg under /images/intro/<name>; keep the placeholder if none exist
+  document.querySelectorAll('.logo-slot img').forEach(function (img) {
+    var exts = ['png', 'svg', 'webp', 'jpg'], k = 0;
+    img.onload = function () { img.parentElement.classList.add('has-logo'); };
+    img.onerror = function () { if (++k < exts.length) img.src = img.dataset.logo + '.' + exts[k]; };
+    img.src = img.dataset.logo + '.' + exts[0];
+  });
+
+  document.getElementById('prev').onclick = function () { show(cur - 1); };
+  document.getElementById('next').onclick = function () { show(cur + 1); };
+  document.getElementById('toggle-notes').onclick = function () { notes.classList.toggle('open'); };
+  document.getElementById('fs').onclick = fullscreen;
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(slides.length - 1);
+    else if (k === 'n' || k === 'N') notes.classList.toggle('open');
+    else if (k === 'f' || k === 'F') fullscreen();
+  });
+
+  // Swipe on touch screens
+  var x0 = null;
+  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+
+  // Fade the control bar out while presenting
+  var idle;
+  function wake() {
+    bar.classList.remove('idle');
+    clearTimeout(idle);
+    idle = setTimeout(function () { bar.classList.add('idle'); }, 2500);
+  }
+  ['mousemove', 'keydown', 'touchstart'].forEach(function (ev) { document.addEventListener(ev, wake, { passive: true }); });
+
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', function () { show(fromHash()); });
+  fit();
+  show(fromHash());
+  wake();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Yi-Wei Lien — Interview Self-Introduction</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  html, body { margin: 0; height: 100%; background: #140C10; overflow: hidden; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #deck { width: 1920px; height: 1080px; position: relative; flex: none; transform-origin: center center; }
+  .slide { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; box-sizing: border-box; overflow: hidden; }
+  .slide:not(.active) { display: none !important; }
+  .slide *, .slide *::before, .slide *::after { box-sizing: border-box; margin: 0; }
+  .slide p { font-size: 32px; line-height: 1.4; }
+  .slide h1 { font-size: 96px; line-height: 1.1; font-weight: 600; }
+  .slide h2 { font-size: 64px; line-height: 1.15; font-weight: 600; }
+  .slide h3 { font-size: 44px; line-height: 1.2; font-weight: 600; }
+  .slide ul { padding: 0 0 0 1.1em; }
+  .slide img, .slide svg { display: block; flex: none; }
+  .slide aside { display: none; }
+  .logo-slot { overflow: hidden; }
+  .logo-slot img { display: none; width: 100%; height: 100%; object-fit: contain; }
+  .logo-slot.has-logo { border-color: transparent !important; }
+  .logo-slot.has-logo img { display: block; }
+  .logo-slot.has-logo p { display: none; }
+
+  #bar { position: fixed; right: 16px; bottom: 16px; display: flex; gap: 6px; align-items: center;
+         font: 13px/1 ui-monospace, Menlo, monospace; color: #E9DDE1; background: rgba(42, 26, 33, .85);
+         border-radius: 999px; padding: 6px 8px; transition: opacity .3s; z-index: 10; }
+  #bar.idle { opacity: 0; }
+  #bar button, #bar a { all: unset; cursor: pointer; padding: 6px 10px; border-radius: 999px; color: inherit; }
+  #bar button:hover, #bar a:hover { background: rgba(255, 255, 255, .12); }
+  #bar button:focus-visible, #bar a:focus-visible { outline: 2px solid #E7B9A6; }
+  #count { min-width: 52px; text-align: center; }
+  #notes { position: fixed; left: 16px; right: 16px; bottom: 64px; max-height: 32vh; overflow: auto; display: none;
+           background: rgba(20, 12, 16, .94); color: #F3ECEF; border: 1px solid #563444; border-radius: 12px;
+           padding: 16px 20px; font: 16px/1.6 'IBM Plex Sans', 'Noto Sans TC', system-ui, sans-serif; z-index: 10; }
+  #notes.open { display: block; }
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- ===== Slide 01 · cover ===== -->
+<section class="slide" id="cover" data-transition="fade" style="background:#2A1A21;color:#CDB7BF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:grid;grid-template-columns:1fr 560px;gap:96px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#E7B9A6">Interview · Self-Introduction</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05;color:#FAF6F3">Yi-Wei Lien</h1>
+<p style="font-size:44px;color:#E7B9A6">連奕維</p>
+</div>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:500;color:#FAF6F3">Backend &amp; Systems Engineer</p>
+<p style="font-size:32px;color:#CDB7BF">M.S. Computer Science, National Taiwan University · MIRLab</p>
+<div style="display:flex;gap:24px">
+<div class="logo-slot" style="width:320px;height:160px;border:2px dashed #7A5F6A;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/ntu" alt="NTU logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#CDB7BF">NTU logo</p></div>
+<div class="logo-slot" style="width:320px;height:160px;border:2px dashed #7A5F6A;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/mirlab" alt="MIRLab logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#CDB7BF">MIRLab logo</p></div>
+</div>
+</div>
+<img src="/images/avatar/Portraits.jpg" alt="Portrait of Yi-Wei Lien" style="width:560px;height:560px;object-fit:cover;border-radius:50%;border:6px solid #563444">
+<aside>Hi, thank you for having me. I’m Yi-Wei Lien. I’m a second-year master’s student in Computer Science at National Taiwan University, in MIRLab. I see myself as a backend and systems engineer: I like building services that hold up in production, and I like chasing performance down to the hardware. In the next few minutes I’ll walk through my experience, two projects in depth, and what I’m looking for next.</aside>
+</section>
+
+<!-- ===== Slide 02 · about ===== -->
+<section class="slide" id="about" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">01 · About me</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">At every stage of university, I explored who I am and where my career should go.</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">EDUCATION</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">NTU CS</h3>
+<p style="font-size:32px;line-height:1.4">M.S., MIRLab<br>2025 – 2027</p>
+<p style="font-size:32px;line-height:1.4">B.S., graduated<br>2021 – 2025</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">INDUSTRY</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">3 internships</h3>
+<p style="font-size:32px;line-height:1.4">Shopback, software engineering</p>
+<p style="font-size:32px;line-height:1.4">Cmoney, backend</p>
+<p style="font-size:32px;line-height:1.4">Cmoney, AI/ML (now)</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">RESEARCH</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Academia Sinica</h3>
+<p style="font-size:32px;line-height:1.4">CITI and IIS research internships</p>
+<p style="font-size:32px;line-height:1.4">Paper under review at AAMAS 2027</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">02</p>
+</div>
+<aside>A quick summary first. At every stage of university, I’ve tried to explore deeply, both who I am and where my career should go. I studied computer science at NTU for my bachelor’s, and I’m now finishing my master’s in MIRLab. In industry I’ve done three internships: software engineering at Shopback, backend at Cmoney, and now AI/ML at Cmoney. In research I’ve had two research internships at Academia Sinica, and the most recent one became a paper that is under review at AAMAS 2027.</aside>
+</section>
+
+<!-- ===== Slide 03 · timeline ===== -->
+<section class="slide" id="timeline" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">01 · About me</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Where I’ve worked</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/citi" alt="CITI logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">CITI logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2023.09 – 2024.06</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">Research Intern (Undergraduate)</h3>
+<p style="font-size:24px;line-height:1.4">CITI, Academia Sinica</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/cmoney" alt="Cmoney logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Cmoney logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2024.07 – 2025.04</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">Backend Development Engineer Intern</h3>
+<p style="font-size:24px;line-height:1.4">Cmoney</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/shopback" alt="Shopback logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Shopback logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2025.05 – 2025.11</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">Software Development Engineer Intern</h3>
+<p style="font-size:24px;line-height:1.4">Shopback</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #C9B4BA;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/iis" alt="IIS logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">IIS logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2026.06 – 2026.08</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">Research Intern</h3>
+<p style="font-size:24px;line-height:1.4">IIS, Academia Sinica</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;border-top:6px solid #563444;padding:28px 0 0">
+<div class="logo-slot" style="height:180px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/cmoney" alt="Cmoney logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Cmoney logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2026.09 – now</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">AI/ML Engineer Intern</h3>
+<p style="font-size:24px;line-height:1.4">Cmoney · current</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">03</p>
+</div>
+<aside>Here is the timeline. I started with a research internship at CITI, Academia Sinica, where I built a dataset generation system. Then I did my first industry internship as a backend engineer at Cmoney, followed by Shopback. This summer I did a research internship at IIS, Academia Sinica, and since September I’ve been back at Cmoney. I’ll go through the two backend roles in detail, newest first, starting with Shopback.</aside>
+</section>
+
+<!-- ===== Slide 04 · shopback ===== -->
+<section class="slide" id="shopback" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · Experience · Shopback</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Software Development Engineer Intern</h2>
+<p style="font-size:32px">May 2025 – Nov 2025 · Taipei · Hybrid</p>
+</div>
+<div class="logo-slot" style="width:360px;height:200px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/shopback" alt="Shopback logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Shopback logo</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">The setting</h3>
+<p style="font-size:32px;line-height:1.45">Core backend team of a cashback platform, in a TypeScript monorepo.</p>
+<p style="font-size:32px;line-height:1.45">Real training in a production environment.</p>
+<p style="font-size:32px;line-height:1.45">Services I touched: customer support, watchlist, notification, travel.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">TypeScript</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">Kubernetes</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">Monorepo</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">SQL</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">CI</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#2A1A21;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;color:#E7B9A6;line-height:1.1">~100 → &lt;10 ms</p>
+<p style="font-size:32px;color:#E9DDE1">RPC overhead removed across 10+ APIs</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;color:#563444;line-height:1.1">−10–15%</p>
+<p style="font-size:32px">error rates on 5+ critical APIs</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">04</p>
+</div>
+<aside>At Shopback I was a software development engineer intern on the core backend team. Shopback is a cashback platform, and the backend is a TypeScript monorepo running on Kubernetes, so this was real training in a production environment. I worked across customer support, watchlist, notification and travel services. Two main results: I removed RPC overhead across more than ten APIs, taking latency from about 100 milliseconds to under 10, and I improved reliability on five critical APIs, bringing error rates down by 10 to 15 percent. Let me start with what I learned about reliability, then go deep on the latency work.</aside>
+</section>
+
+<!-- ===== Slide 05 · shopback-reliability ===== -->
+<section class="slide" id="shopback-reliability" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · Experience · Shopback</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Lesson: separate the noise from the real failures</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">01 · NOISE</p>
+<div class="logo-slot" style="width:96px;height:96px;border:2px dashed #C9B4BA;border-radius:16px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/datadog" alt="Datadog logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">DD</p></div>
+</div>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#2A1A21">Known, benign alerts</h3>
+<p style="font-size:32px;line-height:1.45">Downgraded their severity and refactored the error-handling workflow around them.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">02 · REAL BUGS</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#2A1A21">Third-party APIs</h3>
+<p style="font-size:32px;line-height:1.45">Traced non-deterministic responses from external APIs and updated our handling logic.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#2A1A21;border-radius:20px;padding:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E7B9A6">03 · RESULT</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1;color:#E7B9A6">−10–15%</p>
+<p style="font-size:32px;line-height:1.45;color:#E9DDE1">error rates on 5+ critical APIs</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">05</p>
+</div>
+<aside>The lesson from the reliability work: a lot of what looked like errors were known, benign patterns. So first I separated noise from real failures. For the noise, I downgraded alert severity and refactored the error-handling workflow so those cases were handled explicitly. For the real failures, a couple of them came from third-party APIs behaving non-deterministically, so I traced those cases and updated our handling logic. Across five critical APIs, error rates went down by 10 to 15 percent, and the alerts that remained were worth paying attention to.</aside>
+</section>
+
+<!-- ===== Slide 06 · mono-context ===== -->
+<section class="slide" id="mono-context" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">Deep dive · Shopback</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">The monorepo migration</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 760px;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Why</h3>
+<p style="font-size:32px;line-height:1.45">Each microservice took its own container, and idle services still held their allocated resources.</p>
+<p style="font-size:32px;line-height:1.45">Moving services into a TypeScript monorepo lets them share one process and resource pool.</p>
+<p style="font-size:32px;line-height:1.45">In some ways it is also easier for the team to maintain.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">The task</h3>
+<p style="font-size:32px;line-height:1.45">Every call between services inside the monorepo becomes a direct function call.</p>
+</div>
+</div>
+<img src="/images/posts/monorepo.jpg" alt="TypeScript monorepo architecture: microservices sharing a single repository" style="width:760px;height:560px;object-fit:cover;border-radius:20px">
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">06</p>
+</div>
+<aside>This was the hardest task of my internship. Shopback runs many microservices, each taking its own container, and idle services still hold their allocated resources. Moving services into a TypeScript monorepo lets them share one process and resource pool, and in some ways it is easier for the team to maintain. My task was concrete: every call between services inside the monorepo becomes a direct function call. On paper it sounds like a refactor.</aside>
+</section>
+
+<!-- ===== Slide 07 · mono-approach ===== -->
+<section class="slide" id="mono-approach" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">Deep dive · Shopback</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">From a network hop to a function call</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 600px;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">BEFORE · separate containers</p>
+<div style="display:flex;align-items:center;gap:24px">
+<div style="width:240px;background:#FFFFFF;border:2px solid #C9B4BA;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#2A1A21;text-align:center">Service A</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">API call over network</p>
+<svg width="220" height="56" viewBox="0 0 220 56" aria-hidden="true"><polygon points="0,14.0 132.0,14.0 132.0,0 220.0,28.0 132.0,56.0 132.0,42.0 0,42.0" fill="#C9B4BA"/></svg>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">~100 ms</p>
+</div>
+<div style="width:240px;background:#FFFFFF;border:2px solid #C9B4BA;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#2A1A21;text-align:center">Service B</p>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">AFTER · one monorepo process</p>
+<div style="display:flex;align-items:center;gap:24px;background:#2A1A21;border-radius:20px;padding:28px">
+<div style="width:212px;background:#3D2731;border:2px solid #7A5F6A;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#FAF6F3;text-align:center">Service A</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E7B9A6">direct function call</p>
+<svg width="220" height="56" viewBox="0 0 220 56" aria-hidden="true"><polygon points="0,14.0 132.0,14.0 132.0,0 220.0,28.0 132.0,56.0 132.0,42.0 0,42.0" fill="#E7B9A6"/></svg>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E7B9A6">&lt;10 ms</p>
+</div>
+<div style="width:212px;background:#3D2731;border:2px solid #7A5F6A;border-radius:16px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#FAF6F3;text-align:center">Service B</p>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Why it was hard</h3>
+<ul style="font-size:28px;line-height:1.45;display:flex;flex-direction:column;gap:16px">
+<li>Designed for shared libraries,<br>not for running services</li>
+<li>Frameworks clashed with dependency resolution</li>
+<li>Version conflicts, no clear stack traces</li>
+<li>No prior art; my mentor was new to it too</li>
+</ul>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">07</p>
+</div>
+<aside>Before, Service A called Service B over the network, which cost around 100 milliseconds per call. After the migration, both run in the same monorepo process and A simply calls B’s function. In practice this was hard for a few reasons. The monorepo had been designed for shared libraries, not for running backend services with their own startup lifecycle. We used several backend frameworks, and they interacted badly with the monorepo’s dependency resolution. There were workspace-level version conflicts that only showed up at runtime, without obvious stack traces. And nobody on my immediate team, including my mentor, had done this before.</aside>
+</section>
+
+<!-- ===== Slide 08 · mono-result ===== -->
+<section class="slide" id="mono-result" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">Deep dive · Shopback</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">The result, and how I got unstuck</h2>
+</div>
+<div style="display:grid;grid-template-columns:720px 1fr;gap:64px;align-items:stretch">
+<div style="display:flex;flex-direction:column;justify-content:center;gap:16px;background:#2A1A21;border-radius:24px;padding:56px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E7B9A6">LATENCY PER CALL</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1;color:#FAF6F3">~100 ms</p>
+<svg width="56" height="72" viewBox="0 0 56 72" aria-hidden="true"><polygon points="14.0,0 42.0,0 42.0,43.199999999999996 56.0,43.199999999999996 28.0,72.0 0,43.199999999999996 14.0,43.199999999999996" fill="#E7B9A6"/></svg>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1;color:#E7B9A6">&lt;10 ms</p>
+<p style="font-size:32px;color:#E9DDE1">across 10+ APIs</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;gap:24px;align-items:start">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px;white-space:nowrap">Sprints 1–3</p>
+<p style="font-size:32px;line-height:1.45">Slow progress. I could see the shape of the solution but couldn’t make it run.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px;white-space:nowrap">Turning point</p>
+<p style="font-size:32px;line-height:1.45">Cold-messaged a senior engineer on another team who had solved a related problem.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px;white-space:nowrap">Next sprint</p>
+<p style="font-size:32px;line-height:1.45">The pieces clicked; the migration shipped.</p>
+</div>
+<div style="flex:1"></div>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:500;line-height:1.25;color:#2A1A21;border-left:6px solid #563444;padding:0 0 0 28px">Ask for help proactively, even from a stranger.</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">08</p>
+</div>
+<aside>The outcome: each cross-service call went from about 100 milliseconds to under 10, across more than ten APIs, because the network hop was gone. But the part I learned the most from was getting unstuck. For two or three sprints I made slow progress; I could see the shape of the solution but couldn’t make it run. Eventually I cold-messaged a senior engineer on another team who had touched a related problem. He walked me through his approach, and I finished the migration in the next sprint. My takeaway: when you’re stuck, ask for help proactively, even from a stranger.</aside>
+</section>
+
+<!-- ===== Slide 09 · cmoney ===== -->
+<section class="slide" id="cmoney" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · Experience · Cmoney</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Backend Development Engineer Intern</h2>
+<p style="font-size:32px">Jul 2024 – Apr 2025 · New Taipei City · Hybrid</p>
+</div>
+<div class="logo-slot" style="width:360px;height:200px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/cmoney" alt="Cmoney logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Cmoney logo</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Microservice refactor</h3>
+<ul style="font-size:32px;line-height:1.45;display:flex;flex-direction:column;gap:12px">
+<li>Extracted shared business logic out of the monolith</li>
+<li>Defined clean service interfaces</li>
+<li>Moved data access from direct DB calls to versioned service contracts</li>
+</ul>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">C#</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">ASP.NET</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">MongoDB</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">OOP</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#F1E8E3;padding:8px 16px;border-radius:8px">High concurrency</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#2A1A21;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;color:#E7B9A6;line-height:1.1">9 APIs</p>
+<p style="font-size:32px;color:#E9DDE1">refactored into microservices</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#F1E8E3;border-radius:20px;padding:40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;color:#563444;line-height:1.1">7M+</p>
+<p style="font-size:32px">downloads of the flagship app</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">09</p>
+</div>
+<aside>Before Shopback, my first industry internship was at Cmoney, one of Taiwan’s largest financial information platforms; its flagship app has more than seven million downloads. I joined in the middle of a microservice refactor of the core backend and refactored nine backend APIs. Concretely, that meant extracting shared business logic out of the monolith, defining clean service interfaces, and moving data access from direct database calls to versioned service contracts. The stack was C#, ASP.NET and MongoDB.</aside>
+</section>
+
+<!-- ===== Slide 10 · cmoney-lessons ===== -->
+<section class="slide" id="cmoney-lessons" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">02 · Experience · Cmoney</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">What the refactor taught me</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">High concurrency</h3>
+<p style="font-size:32px;line-height:1.45">Millions of users reading financial data at market open expose edge cases that green tests never show.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Design pays off later</h3>
+<p style="font-size:32px;line-height:1.45">I learned OOP architecture by inheriting code that didn’t use it, and by fixing that.</p>
+</div>
+</div>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:500;line-height:1.3;color:#2A1A21;border-left:6px solid #563444;padding:0 0 0 32px">“Refactoring someone else’s production system is the best education in software architecture I’ve had.”</p>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">10</p>
+</div>
+<aside>Two lessons from the refactor at Cmoney stayed with me. First, high concurrency: when millions of users open the app at market open, you hit edge cases that never show up while the tests are green. Second, design pays off later. I learned object-oriented architecture not from a textbook, but from inheriting code that didn’t use it, and then refactoring it. That’s why I say refactoring someone else’s production system is the best education in software architecture I’ve had.</aside>
+</section>
+
+<!-- ===== Slide 11 · seam ===== -->
+<section class="slide" id="seam" data-transition="fade" style="background:#F1E8E3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">Project · Systems</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Seam carving on a V100</h2>
+</div>
+<div style="display:grid;grid-template-columns:1000px 1fr;gap:64px;align-items:start">
+<img src="/images/posts/seam-carving.png" alt="Seam carving: the original image, the lowest-energy seams highlighted in red, and the content-aware resized result" style="width:1000px;height:426px;object-fit:contain;background:#FAF6F3;border-radius:20px">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">WHAT IT IS</p>
+<p style="font-size:32px;line-height:1.45;color:#2A1A21">An engineering task, not research: make an existing image-resizing algorithm fast on a GPU, guided by profiling.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">TOOLS I USED</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">CUDA</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">C++</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">OpenMP</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">Nsight Compute</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444;background:#FAF6F3;padding:8px 16px;border-radius:8px">NVIDIA V100</p>
+</div>
+</div>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:28px;font-weight:600;color:#FAF6F3;background:#563444;padding:14px 22px;border-radius:12px">Top 10 of 40 teams · NTU Parallel Programming</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">11</p>
+</div>
+<aside>One more project, briefly. In our parallel programming course, my team optimized seam carving, a content-aware image-resizing algorithm, on an NVIDIA V100. I want to be clear that this was an engineering task, not research: take an existing algorithm and make it fast. I wrote the CUDA kernels in C++, compared against a tuned OpenMP baseline on the CPU, and used Nsight Compute to decide every optimization. It placed in the top 10 of 40 teams, and I’m happy to go into the details if you’d like.</aside>
+</section>
+
+<!-- ===== Slide 12 · drps ===== -->
+<section class="slide" id="drps" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">03 · Research · IIS, Academia Sinica</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Per-agent rotation in multi-agent RL</h2>
+<p style="font-size:32px">Jul – Oct 2026 · paper under review at AAMAS 2027</p>
+</div>
+<div class="logo-slot" style="width:360px;height:200px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/iis" alt="IIS logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">IIS logo</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">The idea</h3>
+<p style="font-size:32px;line-height:1.45">Agents that share one network tend to act alike, but teams need different roles.</p>
+<p style="font-size:32px;line-height:1.45">Existing methods let each agent <b>rescale</b> shared features. I let each agent also <b>rotate</b> them, at only 6.7% more parameters.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:24px;align-items:center;background:#F1E8E3;border-radius:16px;padding:28px 32px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:700;color:#563444;white-space:nowrap">7 / 8</p>
+<p style="font-size:28px;line-height:1.4">SMAC maps end at or above the baseline, and most learn faster</p>
+</div>
+<div style="display:flex;gap:24px;align-items:center;background:#F1E8E3;border-radius:16px;padding:28px 32px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+<p style="font-size:28px;line-height:1.4">Controls show the gain isn’t just extra parameters</p>
+</div>
+<div style="display:flex;gap:24px;align-items:center;background:#F1E8E3;border-radius:16px;padding:28px 32px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#563444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+<p style="font-size:28px;line-height:1.4">Reported where it loses, too: randomized team compositions</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">12</p>
+</div>
+<aside>Briefly on research. This summer I did a research internship at IIS, Academia Sinica, and the work became a paper now under review at AAMAS 2027. The problem: in multi-agent reinforcement learning, agents usually share one network, which pushes them to behave alike even when the team needs different roles. Existing methods let each agent rescale the shared features. I added a per-agent rotation, so agents can also orient features differently, at 6.7 percent more parameters. On eight StarCraft benchmark maps it learns faster on most maps and ends at or above the baseline on seven. I also ran controls to prove the gain isn’t just extra parameters, and reported the setting where it loses. I bring up research not because I’m pivoting to ML, but because it’s the same habit as the GPU work: careful experiments and honest results.</aside>
+</section>
+
+<!-- ===== Slide 13 · research ===== -->
+<section class="slide" id="research" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">03 · Research</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">I ramp up fast in unfamiliar domains</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:36px">
+<div style="height:160px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#FAF6F3">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:700;color:#563444">NTU AIS Lab</p>
+</div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2026.03 – 2026.07</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">RAG defense via graph theory</h3>
+<p style="font-size:28px;line-height:1.45">Co-first author. A training-free, black-box defense against RAG poisoning.</p>
+<p style="font-size:24px;color:#563444">Under review · ACL ARR, Oct 2026</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:36px">
+<div class="logo-slot" style="height:160px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/esun" alt="E.SUN logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">E.SUN logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2026.06 – now</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">RL for portfolio management</h3>
+<p style="font-size:28px;line-height:1.45">Industry–academia collaboration between MIRLab and E.SUN Financial Holding.</p>
+<p style="font-size:24px;color:#563444">Ongoing</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:36px">
+<div class="logo-slot" style="height:160px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/mirlab" alt="MIRLab logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">MIRLab logo</p></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2026.01 – 2026.05</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;line-height:1.25;color:#2A1A21">Algorithmic trading on TWSE</h3>
+<p style="font-size:28px;line-height:1.45">Daily strategies with automated order execution through broker APIs.</p>
+<p style="font-size:24px;color:#563444">3-person team</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">13</p>
+</div>
+<aside>Three more research projects, quickly, mostly to show range. With AIS Lab I co-first-authored a training-free, black-box defense against poisoning attacks on retrieval-augmented generation; it’s under review at ACL Rolling Review. In MIRLab I’m now working on reinforcement learning for portfolio management in a collaboration with E.SUN Financial Holding. And earlier this year, a three-person MIRLab team built daily trading strategies for the Taiwan stock exchange, with automated order execution through broker APIs. Different domains each time; what carries over is how quickly I can get productive in an unfamiliar codebase and problem.</aside>
+</section>
+
+<!-- ===== Slide 14 · leadership ===== -->
+<section class="slide" id="leadership" data-transition="fade" style="background:#FAF6F3;color:#5E4A53;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#563444">04 · Beyond code</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#2A1A21">Leading a team, and teaching</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 600px;gap:48px;align-items:start">
+<div style="display:grid;grid-template-columns:480px 1fr;gap:36px;align-items:start">
+<img src="/images/projects/bubblo-cover.png" alt="Bubblo title screen: a pixel-art 2D platformer" style="width:480px;height:268px;object-fit:cover;border-radius:16px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">PROJECT LEAD · 2025</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Bubblo</h3>
+<p style="font-size:28px;line-height:1.45">Unity 2D platformer, 6 people, 3 months, 600+ commits</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;grid-column:span 2">
+<p style="font-size:28px;line-height:1.45"><b>Architecture first:</b> Observer, State Machine and Command patterns chosen before any game code, so six people didn’t step on each other.</p>
+<p style="font-size:28px;line-height:1.45"><b>Lightweight process:</b> a shared task board, async check-ins, and one weekly sync whose only goal was unblocking people.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#F1E8E3;border-radius:20px;padding:40px">
+<div class="logo-slot" style="height:160px;border:2px dashed #C9B4BA;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-logo="/images/intro/ntu-csie" alt="NTU CSIE logo"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">NTU CSIE logo</p></div>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#2A1A21">Teaching assistant</h3>
+<div style="display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;color:#2A1A21">Introduction to Fintech</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2026.09 – 2027.02</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;color:#2A1A21">Data Structures and Algorithms</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#563444">2023.02 – 2023.06</p>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#7A6470">14</p>
+</div>
+<aside>Outside of pure engineering: I led Bubblo, a 2D platformer built by six people over three months with more than 600 commits. Before anyone wrote game code, I designed the component architecture around Observer, State Machine and Command patterns, because with six people in one codebase implicit coupling kills velocity. On process, I learned that heavy agile ceremony doesn’t fit a student team, so I stripped it down to a task board, async check-ins and one weekly sync just for unblocking people. I’ve also been a teaching assistant twice: for Data Structures and Algorithms, and this semester for Introduction to Fintech. Teaching taught me that explaining something clearly is harder than understanding it.</aside>
+</section>
+
+<!-- ===== Slide 15 · looking-for ===== -->
+<section class="slide" id="looking-for" data-transition="fade" style="background:#2A1A21;color:#CDB7BF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#E7B9A6">05 · What’s next</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.15;color:#FAF6F3">Software, firmware, systems and embedded R&amp;D roles</h2>
+<p style="font-size:32px;line-height:1.45;color:#E9DDE1">Through Taiwan’s R&amp;D Substitute Service (研發替代役), after I graduate in 2027.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#3D2731;border-radius:20px;padding:40px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E7B9A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#FAF6F3">I ship to production</h3>
+<p style="font-size:28px;line-height:1.45">Refactors and migrations on live systems at Shopback and Cmoney.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#3D2731;border-radius:20px;padding:40px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E7B9A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#FAF6F3">I measure, then optimize</h3>
+<p style="font-size:28px;line-height:1.45">Profilers, latency and memory bandwidth decide what I change.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#3D2731;border-radius:20px;padding:40px">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E7B9A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;line-height:1.15;color:#FAF6F3">I ramp up fast</h3>
+<p style="font-size:28px;line-height:1.45">New codebases, languages and domains, from C# to CUDA.</p>
+</div>
+</div>
+<div style="position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#A88F99">Yi-Wei Lien · Backend &amp; Systems Engineer</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#A88F99">15</p>
+</div>
+<aside>So what am I looking for? Software, firmware, systems and embedded R&amp;D roles, through Taiwan’s R&amp;D Substitute Service after I graduate in 2027. What I’ve learned about myself is that I’m happiest as a developing engineer: building things, running them, and making them better. I bring three things. I ship to production: I’ve refactored and migrated live systems at Shopback and Cmoney. I measure before I optimize: profilers, latency numbers and memory bandwidth decide what I change, as in the GPU project. And I ramp up fast, whether it’s a new codebase, a new language or a new domain.</aside>
+</section>
+
+<!-- ===== Slide 16 · thanks ===== -->
+<section class="slide" id="thanks" data-transition="fade" style="background:#2A1A21;color:#CDB7BF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:grid;grid-template-columns:1fr 400px;gap:96px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05;color:#FAF6F3">Thank you</h1>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:500;color:#E7B9A6">Happy to go deeper on anything.</p>
+</div>
+<div style="display:grid;grid-template-columns:200px 1fr;gap:20px 32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#A88F99">EMAIL</p>
+<p style="font-size:32px;color:#FAF6F3">ted20030214@gmail.com</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#A88F99">WEBSITE</p>
+<p style="font-size:32px;color:#FAF6F3">lien0214.github.io</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#A88F99">GITHUB</p>
+<p style="font-size:32px;color:#FAF6F3">github.com/lien0214</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#A88F99">LINKEDIN</p>
+<p style="font-size:32px;color:#FAF6F3">linkedin.com/in/yi-wei-lien</p>
+</div>
+</div>
+<img src="/images/avatar/Portraits.jpg" alt="Portrait of Yi-Wei Lien" style="width:400px;height:400px;object-fit:cover;border-radius:50%;border:6px solid #563444">
+<aside>That’s me in a nutshell: a backend and systems engineer who ships to production, measures before optimizing, and ramps up fast. Thank you for your time, and I’m happy to go deeper on any of these projects.</aside>
+</section>
+</div></div>
+<div id="notes" aria-live="polite"></div>
+<nav id="bar" aria-label="Slide controls">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <span id="count"></span>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="toggle-notes" aria-label="Toggle speaker notes" title="Speaker notes (N)">Notes</button>
+  <button id="fs" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
+  <a href="/zh-tw/self-intro/">中文</a>
+</nav>
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var deck = document.getElementById('deck');
+  var count = document.getElementById('count');
+  var notes = document.getElementById('notes');
+  var bar = document.getElementById('bar');
+  var cur = 0;
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  function show(i) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (el, k) { el.classList.toggle('active', k === cur); });
+    count.textContent = (cur + 1) + ' / ' + slides.length;
+    var aside = slides[cur].querySelector('aside');
+    notes.textContent = aside ? aside.textContent.trim() : '';
+    if (location.hash !== '#' + (cur + 1)) history.replaceState(null, '', '#' + (cur + 1));
+  }
+  function fromHash() {
+    var n = parseInt(location.hash.slice(1), 10);
+    return isNaN(n) ? 0 : n - 1;
+  }
+  function fullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+  }
+
+  // Logos: try png, svg, webp, jpg under /images/intro/<name>; keep the placeholder if none exist
+  document.querySelectorAll('.logo-slot img').forEach(function (img) {
+    var exts = ['png', 'svg', 'webp', 'jpg'], k = 0;
+    img.onload = function () { img.parentElement.classList.add('has-logo'); };
+    img.onerror = function () { if (++k < exts.length) img.src = img.dataset.logo + '.' + exts[k]; };
+    img.src = img.dataset.logo + '.' + exts[0];
+  });
+
+  document.getElementById('prev').onclick = function () { show(cur - 1); };
+  document.getElementById('next').onclick = function () { show(cur + 1); };
+  document.getElementById('toggle-notes').onclick = function () { notes.classList.toggle('open'); };
+  document.getElementById('fs').onclick = fullscreen;
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(slides.length - 1);
+    else if (k === 'n' || k === 'N') notes.classList.toggle('open');
+    else if (k === 'f' || k === 'F') fullscreen();
+  });
+
+  // Swipe on touch screens
+  var x0 = null;
+  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+
+  // Fade the control bar out while presenting
+  var idle;
+  function wake() {
+    bar.classList.remove('idle');
+    clearTimeout(idle);
+    idle = setTimeout(function () { bar.classList.add('idle'); }, 2500);
+  }
+  ['mousemove', 'keydown', 'touchstart'].forEach(function (ev) { document.addEventListener(ev, wake, { passive: true }); });
+
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', function () { show(fromHash()); });
+  fit();
+  show(fromHash());
+  wake();
+})();
+</script>
+</body>
+</html>
