@@ -1,0 +1,17 @@
+{{- $zh := eq .Lang "zh-tw" -}}
+{{- $index := slice -}}
+{{- range site.RegularPages -}}
+    {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) }}
+    {{- $kind := cond $zh "頁面" "Page" -}}
+    {{- if eq .Section "posts" }}{{ $kind = cond $zh "文章" "Post" }}{{ end -}}
+    {{- if eq .Section "projects" }}{{ $kind = cond $zh "專案" "Project" }}{{ end -}}
+    {{- if eq .Layout "game" }}{{ $kind = cond $zh "遊戲" "Game" }}{{ end -}}
+    {{- $tags := slice -}}
+    {{- with .Params.tags }}{{ $tags = . }}{{ else }}{{ with .Params.stack }}{{ $tags = . }}{{ end }}{{ end -}}
+    {{- $date := "" -}}
+    {{- if eq .Section "posts" }}{{ $date = cond $zh (.Date.Format "2006 年 1 月") (.Date.Format "Jan 2006") }}{{ end -}}
+    {{- with .Params.period }}{{ $date = . }}{{ end -}}
+    {{- $index = $index | append (dict "title" .Title "content" .Plain "permalink" .Permalink "summary" .Summary "description" (.Description | default "") "tags" $tags "kind" $kind "date" $date) -}}
+    {{- end }}
+{{- end -}}
+{{- $index | jsonify -}}

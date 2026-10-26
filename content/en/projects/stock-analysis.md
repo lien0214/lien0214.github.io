@@ -2,7 +2,7 @@
 title: "Algorithm Trading — TWSE"
 description: "Systematic daily trading strategies for the Taiwan Stock Exchange: signal generation, backtesting, live paper-trading, and a multi-broker execution dashboard."
 date: 2026-01-01
-period: "Jan 2026 – Jun 2026"
+period: "Jan 2026 – May 2026"
 team: "MIRLab · 3-person team"
 category: "Research"
 github: "https://github.com/ntumirlab/stock-analysis"
@@ -19,7 +19,7 @@ A production-grade trading system built on FinLab's real-time financial data. Co
 
 **Dashboard**: Web UI (Dash + Bootstrap + Gunicorn) showing trade info, account balance charts, and monthly return visualizations. Deployed with Docker Compose.
 
-**Currently**: Evaluating ML-based signal combination. Live paper-trading is running.
+**By the end of the project (May 2026)**: We were evaluating ML-based signal combination alongside live paper trading.
 
 ## Stack
 

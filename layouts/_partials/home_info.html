@@ -27,36 +27,35 @@
     <div class="bento-currently-header">
       <span class="currently-dot"></span>
       <span class="bento-eyebrow">CURRENTLY</span>
-      <span class="bento-currently-date">May 2026</span>
+      <span class="bento-currently-date">Oct 2026</span>
     </div>
     <ul class="bento-status-list">
       <li class="bento-status-item">
-        <span class="bento-status-icon">🔬</span>
+        <span class="bento-status-icon">🏢</span>
         <div class="bento-status-body">
-          <strong>MSLab</strong>
-          <span class="bento-status-desc">LLM knowledge conflicts &amp; activation steering</span>
-          <span class="currently-tag">LLM research in progress</span>
+          <strong>Cmoney</strong>
+          <span class="bento-status-desc">Intern · replacing the legacy online reranker</span>
         </div>
       </li>
       <li class="bento-status-item">
         <span class="bento-status-icon">📈</span>
         <div class="bento-status-body">
-          <strong>MIRLab</strong>
-          <span class="bento-status-desc">Esun Financial Holding: RL - Portfolio Optimization</span>
+          <strong><a href="http://mirlab.org/" target="_blank" rel="noopener">MIRLab</a> × E.SUN</strong>
+          <span class="bento-status-desc">RL / multi-agent RL for portfolio management</span>
         </div>
       </li>
       <li class="bento-status-item">
-        <span class="bento-status-icon">🛡️</span>
+        <span class="bento-status-icon">🧑‍🏫</span>
         <div class="bento-status-body">
-          <strong><a href="https://ntuaislab.github.io/" target="_blank" rel="noopener">AIS Lab</a></strong>
-          <span class="bento-status-desc">RAG Black Box defense via graph (thesis)</span>
+          <strong>NTU CSIE</strong>
+          <span class="bento-status-desc">TA, CSIE5434 Introduction to Fintech</span>
         </div>
       </li>
       <li class="bento-status-item">
         <span class="bento-status-icon">💼</span>
         <div class="bento-status-body">
           <strong>Open to</strong>
-          <span class="bento-status-desc">AI Engineer / Backend AI roles</span>
+          <span class="bento-status-desc">Firmware / Backend / Systems / Embedded roles</span>
           <span class="currently-tag">available 2027</span>
         </div>
       </li>
@@ -83,16 +82,17 @@
 (function () {
   var SEQUENCE = [
     { cmd: 'whoami', out: [
-        'Yi-Wei Lien  ·  Backend & AI Engineer',
-        'NTU CS MS  ·  MIRLab  ·  MSLab',
+        'Yi-Wei Lien  ·  Backend & Systems Engineer',
+        'NTU CS MS  ·  MIRLab',
     ]},
     { cmd: 'cat focus.txt', out: [
-        '▸ LLM knowledge conflicts & activation steering',
-        '▸ Quant daily strategy on TWSE',
-        '▸ Open to AI Engineer / Backend AI roles',
+        '▸ Backend systems that hold up under real traffic',
+        '▸ Performance work: CUDA, OpenMP, profiling',
+        '▸ Open to Firmware / Backend / Systems / Embedded roles',
     ]},
     { cmd: 'ls projects/', out: [
-        'icc-mem-gen/   algo-trading/   bubblo/   e-motchi/',
+        'seam-carving/  drps-marl/  rag-defense/  marl-portfolio/',
+        'icc-mem-gen/  algo-trading/  bubblo/  e-motchi/',
     ]},
   ];
 

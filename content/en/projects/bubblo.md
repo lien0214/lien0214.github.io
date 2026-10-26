@@ -8,6 +8,9 @@ category: "Project"
 github: "https://github.com/lien0214/Bubblo"
 demo: "/en/game/"
 stack: ["Unity", "C#", "OOP", "Design Patterns", "Game Dev"]
+cover:
+  image: /images/projects/bubblo-cover.png
+  alt: "Bubblo title screen"
 ---
 
 ![Bubblo title screen](/images/projects/bubblo-cover.png)

@@ -18,16 +18,16 @@ languages:
     title: Yi-Wei Lien
     params:
       authorName: Yi-Wei Lien
-      authorBio: "Backend & AI Engineer · NTU CS MS · MIRLab · MSLab"
-      description: "Yi-Wei Lien — Backend & AI Engineer. NTU CS MS student at MIRLab and MSLab. Writing about LLM research, backend engineering, and quantitative trading."
+      authorBio: "Backend & Systems Engineer · NTU CS MS · MIRLab"
+      description: "Yi-Wei Lien — Backend & Systems Engineer. NTU CS MS student at MIRLab. Writing about backend engineering, GPU and parallel programming, and lessons from internships."
       homeInfoParams:
         Title: "Yi-Wei Lien · 連奕維"
         Content: >
-          Backend & AI Engineer · NTU CS MS · MIRLab · MSLab
+          Backend & Systems Engineer · NTU CS MS · MIRLab
 
 
-          I build reliable distributed systems and research how language models learn, forget, and remember.
-          Currently at [MIRLab](http://mirlab.org/) (quant trading) and [MSLab](https://mslab.csie.ntu.edu.tw/) (LLM knowledge conflicts).
+          I build backend systems that hold up under real traffic, and I like chasing performance down to the hardware.
+          M.S. student at [MIRLab](http://mirlab.org/), NTU.
     menu:
       main:
         - name: About
@@ -48,6 +48,9 @@ languages:
         - name: Game
           url: /en/game/
           weight: 6
+        - name: Search
+          url: /en/search/
+          weight: 7
 
   zh-tw:
     contentDir: content/zh-tw
@@ -57,29 +60,29 @@ languages:
     title: 連奕維
     params:
       authorName: 連奕維
-      authorBio: "後端 & AI 工程師 · NTU CS 碩士生 · MIRLab · MSLab"
-      description: "連奕維 — 後端與 AI 工程師。台大資工碩士生，MIRLab 量化交易、MSLab LLM 知識衝突研究。"
+      authorBio: "後端 & 系統工程師 · NTU CS 碩士生 · MIRLab"
+      description: "連奕維 — 後端與系統工程師。台大資工碩士生（MIRLab），寫後端工程、GPU 與平行程式設計，以及實習心得。"
       homeInfoParams:
         Title: "連奕維 · Yi-Wei Lien"
         Content: >
-          後端 & AI 工程師 · 台大資工碩士 · MIRLab · MSLab
+          後端 & 系統工程師 · 台大資工碩士 · MIRLab
 
 
-          我在建構可靠的分散式系統，同時研究語言模型如何學習、遺忘與記憶。
-          目前在 [MIRLab](http://mirlab.org/)（量化交易）和 [MSLab](https://mslab.csie.ntu.edu.tw/)（LLM 知識衝突）進行研究。
+          我喜歡打造在真實流量下站得住的後端系統，也喜歡把效能一路追到硬體層。
+          目前是台大 [MIRLab](http://mirlab.org/) 的碩士生。
     menu:
       main:
         - name: 關於我
           url: /zh-tw/about/
           weight: 1
-        - name: 文章
-          url: /zh-tw/posts/
-          weight: 2
-        - name: 專案
-          url: /zh-tw/projects/
-          weight: 3
         - name: 履歷
           url: /zh-tw/resume/
+          weight: 2
+        - name: 文章
+          url: /zh-tw/posts/
+          weight: 3
+        - name: 專案
+          url: /zh-tw/projects/
           weight: 4
         - name: 聯絡
           url: /zh-tw/contact/
@@ -152,6 +155,8 @@ params:
     limit: 10
     keys:
       - title
+      - description
+      - tags
       - permalink
       - summary
       - content

@@ -1,5 +1,5 @@
 ---
 title: "Projects"
-description: "Research and engineering projects — from LLM knowledge conflicts to quantitative trading to game development."
+description: "Engineering and research projects — from GPU optimization and backend systems to multi-agent RL and game development."
 url: /en/projects/
 ---

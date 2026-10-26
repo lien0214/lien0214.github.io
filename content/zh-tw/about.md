@@ -2,54 +2,43 @@
 title: "關於"
 url: /zh-tw/about/
 summary: about
-description: "關於連奕維 — 台大資工碩士生，後端與 AI 工程師。MIRLab 台股量化交易研究、MSLab LLM 知識衝突研究，曾於 Shopback 與 Cmoney 擔任後端實習工程師。"
+description: "關於連奕維 — 後端與系統工程師，台大資工碩士生（MIRLab）。曾於 Shopback 與 Cmoney 擔任後端實習工程師，關注 GPU 與平行程式設計、多智能體強化學習研究。"
 ---
 
 <img src="/images/avatar/Portraits.jpg" alt="連奕維" class="about-avatar">
 
-**台灣大學資訊工程系碩士**（2025–2027）
-**台灣大學資訊工程系學士**（2021–2025，已畢業）
+- **台灣大學資訊工程系碩士**（MIRLab，2025–2027）
+- **台灣大學資訊工程系學士**（2021–2025，已畢業）
 
-我在台大碩士班就讀中，同時在兩個截然不同的 AI 研究室工作：
+我是台大資工碩二學生，在 [MIRLab](http://mirlab.org/)（多媒體資訊檢索實驗室），目前在與玉山金控的合作計畫中，研究以強化學習與多智能體強化學習（RL / MARL）進行投資組合管理。
 
-- **[MIRLab](http://mirlab.org/)**（多媒體資訊檢索實驗室）— 進行台股量化交易研究
-- **[MSLab](https://mslab.csie.ntu.edu.tw/)**（機器智慧與智能代理系統實驗室）— 論文研究聚焦於大型語言模型中的知識衝突與記憶問題
+碩士前，我在 Shopback 和 Cmoney 擔任後端實習約 18 個月，現在則回到 Cmoney 實習。2026 年 6–8 月在中研院資訊所（IIS）實習，當時的多智能體強化學習研究寫成論文，目前 [AAMAS 2027 審稿中](/zh-tw/projects/drps-marl/)。更早之前曾在中研院資創中心（CITI）擔任大學部研究實習生，也參與過 [MSLab](https://mslab.csie.ntu.edu.tw/) 與 [AIS Lab](https://ntuaislab.github.io/) 的研究專題。
 
-碩士前，我在 Shopback 和 Cmoney 擔任後端工程師實習約 18 個月。也在中研院 Citi 實驗室擔任研究助理，研究資安領域的合成資料生成。
+## 我在找的方向
 
-## 研究興趣
+能親手打造、上線、而且貼近系統層的工程職位：
 
-- **LLM 知識表示**：微調如何在殘差流中創造方向性偏置，以及這些偏置能否在不更新權重的情況下被控制
-- **LLM 知識衝突**：當參數化知識（來自預訓練）與情境知識（來自微調或 Prompt）衝突時會發生什麼，以及如何優雅地解決
-- **量化交易**：針對不同微觀結構市場（如散戶主導的台股）的系統化策略
-- **LLMOps / AI 基礎設施**：建立真正衡量目標的評估 Pipeline，而非只看 BLEU
-
-## 學歷
-
-| | |
-|---|---|
-| **資訊工程系碩士** | 國立台灣大學，2025–2027 |
-| **資訊工程系學士** | 國立台灣大學，2021–2025 |
-
-**研究室：** [MIRLab](http://mirlab.org/)（多媒體資訊檢索實驗室）、[MSLab](https://mslab.csie.ntu.edu.tw/)（機器智慧與智能代理系統實驗室）
+- **後端系統**：高併發 API、微服務架構、可靠性工程
+- **系統與效能**：以 profiling 驅動的優化、平行程式設計（CUDA、OpenMP）
+- **韌體 / 嵌入式**：必須尊重硬體限制的軟體
 
 ## 經歷時間軸
 
 | 期間 | 職位 | 公司/機構 |
 |---|---|---|
-| 2025 年 5 月 – 11 月 | 軟體工程師實習 | Shopback |
+| 2026 年 9 月 – 現在 | AI/ML 工程師實習 | Cmoney |
+| 2026 年 9 月 – 2027 年 2 月 | 金融科技導論 助教 | 台大資工系 |
+| 2026 年 6 月 – 8 月 | 研究實習生 | 中研院資訊所（IIS） |
+| 2025 年 5 月 – 11 月 | 軟體開發工程師實習 | Shopback |
 | 2024 年 7 月 – 2025 年 4 月 | 後端開發工程師實習 | Cmoney |
-| 2023 年 9 月 – 2024 年 6 月 | 研究助理（大學部） | 中研院，Citi Lab |
-| 2023 年 2 月 – 6 月 | 資料結構與演算法助教 | 台大資工系 |
-
----
+| 2023 年 9 月 – 2024 年 6 月 | 研究實習生（大學部） | 中研院資創中心（CITI） |
+| 2023 年 2 月 – 6 月 | 資料結構與演算法 助教 | 台大資工系 |
 
 ## 技術能力
 
-**最熟悉：** TypeScript、Python、C#
-**熟悉的後端技術：** ASP.NET Core、Node.js、Kubernetes、Docker、MongoDB、PostgreSQL
-**常用 ML 工具：** PyTorch、HuggingFace Transformers、PEFT/LoRA、Activation Steering
-**目前學習中：** Quant RL 、 Generative AI Safety
+- **程式語言：** TypeScript · Python · C# · C/C++
+- **系統與平行：** CUDA · OpenMP · Nsight profiling
+- **後端：** ASP.NET Core · Node.js · Kubernetes · Docker · MongoDB · PostgreSQL · SQL
 
 ## 聯絡方式
 
