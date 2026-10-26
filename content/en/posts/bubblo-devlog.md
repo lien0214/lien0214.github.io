@@ -13,7 +13,7 @@ categories:
   - Engineering
 showToc: true
 cover:
-  image: /images/projects/bubblo-cover.png
+  image: /images/projects/bubblo-cover.jpg
   alt: "Bubblo — 2D pixel platformer title screen"
   relative: false
   hidden: false

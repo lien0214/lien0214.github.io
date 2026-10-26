@@ -12,7 +12,7 @@ categories:
   - Engineering
 showToc: true
 cover:
-  image: /images/posts/seam-carving.png
+  image: /images/posts/seam-carving.jpg
   alt: "Original image, seam paths highlighted in red, and the content-aware carved result"
   relative: false
   hidden: false

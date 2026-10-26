@@ -53,7 +53,7 @@ jobs:
           fetch-depth: 1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24
 
@@ -63,8 +63,10 @@ jobs:
           hugo-version: '0.161.1'
           extended: true
 
+      # baseURL points at the local server so Lighthouse measures this build,
+      # not assets fetched from the live site (canonifyURLs makes URLs absolute)
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --baseURL http://localhost:3000/
         env:
           HUGO_PARAMS_GAID: ${{ secrets.GA_MEASUREMENT_ID }}
           HUGO_PARAMS_CONTACTSCRIPTURL: ${{ secrets.CONTACT_SCRIPT_URL }}

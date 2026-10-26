@@ -9,11 +9,11 @@ status: "Top 10 / 40 組 · 台大平行程式設計"
 github: "https://github.com/YuXiangLo/NTUPDP2026"
 stack: ["CUDA", "C++", "OpenMP", "Nsight", "GPU", "平行程式設計"]
 cover:
-  image: /images/posts/seam-carving.png
+  image: /images/posts/seam-carving.jpg
   alt: "原始圖片、標示出的 seam 路徑（紅色）以及 content-aware 裁切後的結果"
 ---
 
-![Seam carving：原圖、seam、裁切結果](/images/posts/seam-carving.png)
+![Seam carving：原圖、seam、裁切結果](/images/posts/seam-carving.jpg)
 
 ## 這是什麼
 

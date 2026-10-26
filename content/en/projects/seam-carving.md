@@ -9,11 +9,11 @@ status: "Top 10 / 40 teams · NTU Parallel Programming"
 github: "https://github.com/YuXiangLo/NTUPDP2026"
 stack: ["CUDA", "C++", "OpenMP", "Nsight", "GPU", "Parallel Programming"]
 cover:
-  image: /images/posts/seam-carving.png
+  image: /images/posts/seam-carving.jpg
   alt: "Original image, seam paths highlighted in red, and the content-aware carved result"
 ---
 
-![Seam carving: original, seams, carved result](/images/posts/seam-carving.png)
+![Seam carving: original, seams, carved result](/images/posts/seam-carving.jpg)
 
 ## What It Is
 

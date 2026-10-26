@@ -12,7 +12,7 @@ categories:
   - Engineering
 showToc: true
 cover:
-  image: /images/posts/seam-carving.png
+  image: /images/posts/seam-carving.jpg
   alt: "原始圖片、標示出的 seam 路徑（紅色）以及 content-aware 裁切後的結果"
   relative: false
   hidden: false
