@@ -2,7 +2,7 @@
 title: "關於"
 url: /zh-tw/about/
 summary: about
-description: "關於連奕維 — 後端與系統工程師，台大資工碩士生（MIRLab）。曾於 Shopback 與 Cmoney 擔任後端實習工程師，關注 GPU 與平行程式設計、多智能體強化學習研究。"
+description: "關於連奕維 — 後端與系統工程師，台大資工碩士生（MIRLab）。曾於 Shopback 與 CMoney 擔任後端實習工程師，關注 GPU 與平行程式設計、多智能體強化學習研究。"
 ---
 
 <img src="/images/avatar/Portraits.jpg" alt="連奕維" class="about-avatar">
@@ -12,7 +12,7 @@ description: "關於連奕維 — 後端與系統工程師，台大資工碩士�
 
 我是台大資工碩二學生，在 [MIRLab](http://mirlab.org/)（多媒體資訊檢索實驗室），目前在與玉山金控的合作計畫中，研究以強化學習與多智能體強化學習（RL / MARL）進行投資組合管理。
 
-碩士前，我在 Shopback 和 Cmoney 擔任後端實習約 18 個月，現在則回到 Cmoney 實習。2026 年 6–8 月在中研院資訊所（IIS）實習，當時的多智能體強化學習研究寫成論文，目前 [AAMAS 2027 審稿中](/zh-tw/projects/drps-marl/)。更早之前曾在中研院資創中心（CITI）擔任大學部研究實習生，也參與過 [MSLab](https://mslab.csie.ntu.edu.tw/) 與 [AIS Lab](https://ntuaislab.github.io/) 的研究專題。
+碩士前，我在 Shopback 和 CMoney 擔任後端實習約 18 個月，現在則回到 CMoney 實習。2026 年 6–8 月在中研院資訊所（IIS）實習，當時的多智能體強化學習研究寫成論文，目前 [AAMAS 2027 審稿中](/zh-tw/projects/drps-marl/)。更早之前曾在中研院資創中心（CITI）擔任大學部研究實習生，也參與過 [MSLab](https://mslab.csie.ntu.edu.tw/) 與 [AIS Lab](https://ntuaislab.github.io/) 的研究專題。
 
 ## 我在找的方向
 
@@ -26,11 +26,11 @@ description: "關於連奕維 — 後端與系統工程師，台大資工碩士�
 
 | 期間 | 職位 | 公司/機構 |
 |---|---|---|
-| 2026 年 9 月 – 現在 | AI/ML 工程師實習 | Cmoney |
+| 2026 年 9 月 – 現在 | AI/ML 工程師實習 | CMoney |
 | 2026 年 9 月 – 2027 年 2 月 | 金融科技導論 助教 | 台大資工系 |
 | 2026 年 6 月 – 8 月 | 研究實習生 | 中研院資訊所（IIS） |
 | 2025 年 5 月 – 11 月 | 軟體開發工程師實習 | Shopback |
-| 2024 年 7 月 – 2025 年 4 月 | 後端開發工程師實習 | Cmoney |
+| 2024 年 7 月 – 2025 年 4 月 | 後端開發工程師實習 | CMoney |
 | 2023 年 9 月 – 2024 年 6 月 | 研究實習生（大學部） | 中研院資創中心（CITI） |
 | 2023 年 2 月 – 6 月 | 資料結構與演算法 助教 | 台大資工系 |
 

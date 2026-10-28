@@ -27,7 +27,7 @@ I was project lead — which in practice meant translating loose PM-level ideas 
 
 Before a single line of game code was written, I designed the component architecture. We used Observer, State Machine, and Command patterns deliberately — not because it felt clever, but because with six people in the same codebase, implicit coupling kills velocity fast. Halfway through the sprint we ran a full refactor of the avatar behaviour system specifically to enforce these patterns more cleanly.
 
-The workflow side was its own challenge. I came in with a surface-level understanding of agile from my Cmoney internship — standups, sprint planning, retrospectives. None of that transferred cleanly to a student team. People have lab work, other coursework, clubs, research. The rigid ceremony doesn't fit. So I stripped it down to something lighter: a shared task board, short async check-ins, and one weekly sync where the only goal was unblocking people.
+The workflow side was its own challenge. I came in with a surface-level understanding of agile from my CMoney internship — standups, sprint planning, retrospectives. None of that transferred cleanly to a student team. People have lab work, other coursework, clubs, research. The rigid ceremony doesn't fit. So I stripped it down to something lighter: a shared task board, short async check-ins, and one weekly sync where the only goal was unblocking people.
 
 We used ChatGPT throughout — no IDE agents existed yet. Looking back it's interesting how much the workflow has changed in a year.
 

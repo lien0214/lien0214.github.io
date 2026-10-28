@@ -2,7 +2,7 @@
 title: "Resume"
 url: /en/resume/
 summary: resume
-description: "Resume of Yi-Wei Lien — NTU CS MS at MIRLab, Backend & Systems Engineer. Internships at Cmoney and Shopback, GPU optimization, and multi-agent RL research. Available 2027."
+description: "Resume of Yi-Wei Lien — NTU CS MS at MIRLab, Backend & Systems Engineer. Internships at CMoney and Shopback, GPU optimization, and multi-agent RL research. Available 2027."
 ShowToc: true
 TocOpen: true
 ShowReadingTime: false
@@ -23,7 +23,7 @@ hidemeta: true
 
 ## Work Experience
 
-### AI/ML Engineer Intern · Cmoney
+### AI/ML Engineer Intern · CMoney
 *Sep 2026 – Present · New Taipei City, Taiwan · Hybrid*
 
 `Recommendation System` `Time-Series Prediction` `PyTorch` `Open-source Dataset`
@@ -39,7 +39,7 @@ hidemeta: true
 - Eliminated RPC overhead across 10+ APIs, cutting latency from ~100ms to under 10ms
 - Enhanced backend reliability for 5+ critical APIs, driving down error rates by 10–15%
 
-### Backend Development Engineer Intern · Cmoney
+### Backend Development Engineer Intern · CMoney
 *Jul 2024 – Apr 2025 · New Taipei City, Taiwan · Hybrid*
 
 `C#` `ASP.NET` `OOP` `Microservice` `MongoDB` `High-Concurrency`

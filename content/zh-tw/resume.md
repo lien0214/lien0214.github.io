@@ -2,7 +2,7 @@
 title: "履歷"
 url: /zh-tw/resume/
 summary: resume
-description: "連奕維的履歷 — 台大資工碩士（MIRLab），後端與系統工程師。Cmoney、Shopback 實習，GPU 優化與多智能體強化學習研究，2027 年可到職。"
+description: "連奕維的履歷 — 台大資工碩士（MIRLab），後端與系統工程師。CMoney、Shopback 實習，GPU 優化與多智能體強化學習研究，2027 年可到職。"
 ShowToc: true
 TocOpen: true
 ShowReadingTime: false
@@ -25,7 +25,7 @@ hidemeta: true
 
 ## 工作經歷
 
-### AI/ML 工程師實習 · Cmoney
+### AI/ML 工程師實習 · CMoney
 *2026 年 9 月 – 現在 · 新北市 · 混合辦公*
 
 `推薦系統` `時間序列預測` `PyTorch` `開源資料集`
@@ -41,7 +41,7 @@ hidemeta: true
 - 消除 10+ 個 API 的 RPC 開銷，延遲從 ~100ms 降至 10ms 以下
 - 強化 5+ 個關鍵 API 的可靠性，錯誤率降低 10–15%
 
-### 後端開發工程師實習 · Cmoney
+### 後端開發工程師實習 · CMoney
 *2024 年 7 月 – 2025 年 4 月 · 新北市 · 混合辦公*
 
 `C#` `ASP.NET` `OOP` `微服務` `MongoDB` `高併發`

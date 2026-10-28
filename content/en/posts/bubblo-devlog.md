@@ -28,9 +28,9 @@ The game is called Bubblo. You play as a bubble creature exploring a pixel-art W
 
 I was the project lead. My job was to translate a loose set of ideas into an actual, shippable game — and to keep five other people moving in the same direction for three months without anyone quitting.
 
-## What I Brought from Cmoney
+## What I Brought from CMoney
 
-A few months before this, I was wrapping up my internship at Cmoney as a backend engineer. Nine months of real agile: sprint planning, daily standups, sprint reviews, retrospectives. I'd sat in enough of those meetings to have a surface-level understanding of what they were for.
+A few months before this, I was wrapping up my internship at CMoney as a backend engineer. Nine months of real agile: sprint planning, daily standups, sprint reviews, retrospectives. I'd sat in enough of those meetings to have a surface-level understanding of what they were for.
 
 So going into Bubblo, I had a framework. We'd run two-week sprints. We'd have a proper task board. We'd do retrospectives. I knew the vocabulary.
 
